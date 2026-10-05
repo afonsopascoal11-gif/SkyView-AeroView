@@ -1,0 +1,1287 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SkyView AeroView — Drone & Visuals</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#0a0a0a;
+    color:#fff;
+    overflow-x:hidden;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+/* ================= HEADER ================= */
+
+header{
+    position:fixed;
+    top:20px;
+    left:50%;
+    transform:translateX(-50%);
+    width:min(1180px,calc(100% - 32px));
+    z-index:100;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:12px 14px 12px 18px;
+
+    background:rgba(10,10,10,.55);
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:100px;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:11px;
+}
+
+.logo img{
+    width:42px;
+    height:42px;
+    object-fit:contain;
+}
+
+.logo-text strong{
+    display:block;
+    font-size:12px;
+    letter-spacing:1.5px;
+}
+
+.logo-text span{
+    display:block;
+    margin-top:3px;
+    color:#888;
+    font-size:8px;
+    letter-spacing:2px;
+}
+
+nav{
+    display:flex;
+    align-items:center;
+    gap:30px;
+}
+
+nav a{
+    font-size:12px;
+    color:#aaa;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#fff;
+}
+
+.nav-cta{
+    background:#fff;
+    color:#000;
+    padding:12px 19px;
+    border-radius:100px;
+    font-weight:700;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    min-height:100vh;
+    position:relative;
+    display:flex;
+    align-items:flex-end;
+
+    padding:0 7vw 75px;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(0,0,0,.15) 0%,
+            rgba(0,0,0,.15) 35%,
+            rgba(0,0,0,.88) 100%
+        ),
+        url("https://images.pexels.com/photos/33516340/pexels-photo-33516340.jpeg?cs=srgb&dl=pexels-sinalmultimedia-33516340.jpg&fm=jpg");
+
+    background-size:cover;
+    background-position:center;
+}
+
+.hero-content{
+    width:100%;
+    max-width:1250px;
+    margin:auto;
+}
+
+.hero-top{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:24px;
+}
+
+.live-dot{
+    width:7px;
+    height:7px;
+    background:#fff;
+    border-radius:50%;
+    box-shadow:0 0 0 5px rgba(255,255,255,.12);
+}
+
+.hero-top span{
+    font-size:10px;
+    text-transform:uppercase;
+    letter-spacing:3px;
+    color:#ddd;
+}
+
+.hero h1{
+    max-width:1100px;
+    font-size:clamp(55px,9vw,125px);
+    line-height:.86;
+    letter-spacing:-7px;
+    font-weight:700;
+}
+
+.hero h1 em{
+    font-style:normal;
+    color:rgba(255,255,255,.48);
+}
+
+.hero-bottom{
+    margin-top:45px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    gap:40px;
+}
+
+.hero-description{
+    max-width:470px;
+    color:#d0d0d0;
+    font-size:15px;
+    line-height:1.8;
+}
+
+.hero-actions{
+    display:flex;
+    gap:12px;
+}
+
+.btn{
+    min-height:54px;
+    padding:16px 25px;
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:100px;
+
+    font-size:13px;
+    font-weight:700;
+
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+}
+
+.btn-white{
+    background:#fff;
+    color:#000;
+}
+
+.btn-outline{
+    border:1px solid rgba(255,255,255,.35);
+    color:#fff;
+    background:rgba(255,255,255,.06);
+}
+
+.whatsapp-btn{
+    padding:19px 31px;
+    min-height:58px;
+    font-size:14px;
+}
+
+/* ================= MARQUEE ================= */
+
+.marquee{
+    background:#fff;
+    color:#080808;
+    overflow:hidden;
+    border-bottom:1px solid #ddd;
+}
+
+.marquee-track{
+    width:max-content;
+    display:flex;
+    gap:35px;
+    padding:17px 0;
+    animation:move 25s linear infinite;
+}
+
+.marquee span{
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:3px;
+    text-transform:uppercase;
+}
+
+.marquee .star{
+    font-size:15px;
+}
+
+@keyframes move{
+    from{transform:translateX(0)}
+    to{transform:translateX(-50%)}
+}
+
+/* ================= INTRO ================= */
+
+.intro{
+    background:#0d0d0d;
+    padding:135px 7vw;
+}
+
+.intro-inner{
+    max-width:1250px;
+    margin:auto;
+}
+
+.eyebrow{
+    color:#666;
+    font-size:10px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+}
+
+.intro-layout{
+    margin-top:30px;
+
+    display:grid;
+    grid-template-columns:1.5fr 1fr;
+    gap:100px;
+    align-items:end;
+}
+
+.intro h2{
+    font-size:clamp(42px,6vw,82px);
+    line-height:.95;
+    letter-spacing:-5px;
+}
+
+.intro h2 span{
+    color:#555;
+}
+
+.intro-copy{
+    color:#999;
+    font-size:15px;
+    line-height:1.9;
+}
+
+.intro-copy strong{
+    color:#fff;
+}
+
+/* ================= SERVICES ================= */
+
+.services{
+    background:#f3f2ed;
+    color:#111;
+    padding:125px 7vw;
+}
+
+.services-inner{
+    max-width:1250px;
+    margin:auto;
+}
+
+.services-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    gap:50px;
+    margin-bottom:65px;
+}
+
+.services-title h2{
+    margin-top:15px;
+    font-size:clamp(48px,6vw,82px);
+    letter-spacing:-5px;
+}
+
+.services-top p{
+    max-width:370px;
+    color:#777;
+    line-height:1.8;
+    font-size:14px;
+}
+
+.service-list{
+    border-top:1px solid #c9c8c2;
+}
+
+.service{
+    min-height:145px;
+
+    display:grid;
+    grid-template-columns:80px 1.2fr 1fr 55px;
+    align-items:center;
+    gap:30px;
+
+    border-bottom:1px solid #c9c8c2;
+
+    transition:.4s;
+}
+
+.service:hover{
+    padding:0 20px;
+    background:#e9e8e2;
+}
+
+.service-num{
+    color:#999;
+    font-size:11px;
+    letter-spacing:1px;
+}
+
+.service-name{
+    font-size:30px;
+    letter-spacing:-1.5px;
+    font-weight:600;
+}
+
+.service-text{
+    color:#777;
+    font-size:13px;
+    line-height:1.7;
+}
+
+.service-arrow{
+    width:42px;
+    height:42px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border:1px solid #bbb;
+    border-radius:50%;
+
+    font-size:18px;
+
+    transition:.4s;
+}
+
+.service:hover .service-arrow{
+    background:#111;
+    color:#fff;
+    transform:rotate(45deg);
+}
+
+/* ================= PRICING ================= */
+
+.pricing{
+    background:#111;
+    padding:130px 7vw;
+}
+
+.pricing-inner{
+    max-width:1250px;
+    margin:auto;
+}
+
+.pricing-heading{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    margin-bottom:60px;
+    gap:30px;
+}
+
+.pricing-heading h2{
+    margin-top:15px;
+    font-size:clamp(45px,6vw,78px);
+    letter-spacing:-5px;
+}
+
+.pricing-heading p{
+    color:#777;
+    max-width:300px;
+    font-size:13px;
+    line-height:1.7;
+}
+
+.pricing-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
+}
+
+.price-card{
+    min-height:245px;
+    padding:30px;
+
+    border:1px solid #282828;
+    border-radius:20px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+
+    position:relative;
+
+    transition:.3s;
+}
+
+.price-card:hover{
+    transform:translateY(-5px);
+    border-color:#555;
+}
+
+.price-card.featured{
+    background:#fff;
+    color:#111;
+    border-color:#fff;
+}
+
+.price-label{
+    color:#777;
+    font-size:10px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+
+.price-card.featured .price-label{
+    color:#666;
+}
+
+.price{
+    font-size:40px;
+    font-weight:700;
+    letter-spacing:-2px;
+}
+
+.popular{
+    position:absolute;
+    right:20px;
+    top:20px;
+
+    background:#111;
+    color:#fff;
+
+    padding:7px 10px;
+    border-radius:100px;
+
+    font-size:8px;
+    font-weight:700;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+}
+
+/* ================= CONDITIONS ================= */
+
+.conditions{
+    background:#f3f2ed;
+    color:#111;
+    padding:120px 7vw;
+}
+
+.conditions-inner{
+    max-width:1250px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:1fr 1.4fr;
+    gap:100px;
+}
+
+.conditions h2{
+    margin-top:15px;
+    font-size:clamp(45px,6vw,75px);
+    line-height:.95;
+    letter-spacing:-5px;
+}
+
+.condition-list{
+    border-top:1px solid #cccac3;
+}
+
+.condition{
+    display:grid;
+    grid-template-columns:55px 1fr;
+    gap:20px;
+
+    padding:28px 0;
+
+    border-bottom:1px solid #cccac3;
+}
+
+.condition-number{
+    color:#999;
+    font-size:11px;
+}
+
+.condition h3{
+    font-size:18px;
+    margin-bottom:8px;
+}
+
+.condition p{
+    max-width:550px;
+    color:#777;
+    font-size:13px;
+    line-height:1.7;
+}
+
+/* ================= CONTACT ================= */
+
+.contact{
+    background:#0b0b0b;
+    padding:135px 7vw;
+}
+
+.contact-inner{
+    max-width:1250px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:100px;
+}
+
+.contact h2{
+    margin-top:18px;
+    font-size:clamp(55px,8vw,105px);
+    line-height:.86;
+    letter-spacing:-7px;
+}
+
+.contact-side{
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+}
+
+.contact-side > .whatsapp-btn{
+    width:max-content;
+    margin-bottom:45px;
+}
+
+.contact-item{
+    padding:20px 0;
+    border-bottom:1px solid #292929;
+}
+
+.contact-item:first-of-type{
+    border-top:1px solid #292929;
+}
+
+.contact-item small{
+    display:block;
+    margin-bottom:8px;
+
+    color:#666;
+    font-size:9px;
+    text-transform:uppercase;
+    letter-spacing:2px;
+}
+
+.contact-item a,
+.contact-item p{
+    font-size:16px;
+}
+
+.contact-item a:hover{
+    text-decoration:underline;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    background:#070707;
+    border-top:1px solid #1c1c1c;
+    padding:30px 7vw;
+}
+
+.footer-inner{
+    max-width:1250px;
+    margin:auto;
+
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+}
+
+footer p{
+    color:#555;
+    font-size:10px;
+    letter-spacing:1px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:900px){
+
+    header{
+        top:12px;
+    }
+
+    nav{
+        display:none;
+    }
+
+    .hero{
+        padding:0 6vw 55px;
+    }
+
+    .hero h1{
+        letter-spacing:-4px;
+    }
+
+    .hero-bottom{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .intro-layout,
+    .conditions-inner,
+    .contact-inner{
+        grid-template-columns:1fr;
+        gap:50px;
+    }
+
+    .pricing-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .service{
+        grid-template-columns:55px 1fr 45px;
+        gap:20px;
+        padding:30px 0;
+    }
+
+    .service-text{
+        grid-column:2;
+    }
+
+    .service-arrow{
+        grid-column:3;
+        grid-row:1 / span 2;
+    }
+}
+
+@media(max-width:600px){
+
+    header{
+        width:calc(100% - 20px);
+    }
+
+    .logo img{
+        width:38px;
+        height:38px;
+    }
+
+    .logo-text strong{
+        font-size:10px;
+    }
+
+    .hero{
+        min-height:92vh;
+    }
+
+    .hero h1{
+        font-size:54px;
+    }
+
+    .hero-actions{
+        width:100%;
+        flex-direction:column;
+    }
+
+    .hero-actions .btn{
+        width:100%;
+    }
+
+    .intro,
+    .services,
+    .pricing,
+    .conditions,
+    .contact{
+        padding:85px 6vw;
+    }
+
+    .intro-layout{
+        gap:35px;
+    }
+
+    .services-top,
+    .pricing-heading{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .service{
+        grid-template-columns:35px 1fr 40px;
+        gap:12px;
+        min-height:0;
+        padding:28px 0;
+    }
+
+    .service-name{
+        font-size:23px;
+    }
+
+    .service-text{
+        font-size:12px;
+    }
+
+    .pricing-grid{
+        grid-template-columns:1fr;
+    }
+
+    .price-card{
+        min-height:210px;
+    }
+
+    .contact-side > .whatsapp-btn{
+        width:100%;
+        margin-bottom:30px;
+    }
+
+    .footer-inner{
+        flex-direction:column;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+    <a href="#" class="logo">
+
+        <img src="logo.png" alt="SkyView AeroView">
+
+        <div class="logo-text">
+            <strong>SKYVIEW AEROVIEW</strong>
+            <span>DRONE • FILM • EDIT</span>
+        </div>
+
+    </a>
+
+    <nav>
+        <a href="#servicos">Serviços</a>
+        <a href="#precos">Preços</a>
+        <a href="#condicoes">Condições</a>
+        <a href="#contacto" class="nav-cta">Contacto</a>
+    </nav>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="hero-top">
+            <div class="live-dot"></div>
+            <span>Maputo • Matola</span>
+        </div>
+
+        <h1>
+            Veja o mundo<br>
+            <em>de outro ângulo.</em>
+        </h1>
+
+        <div class="hero-bottom">
+
+            <p class="hero-description">
+                Filmagem aérea e edição de vídeo para eventos,
+                projetos e momentos que merecem ser vistos
+                de uma nova perspetiva.
+            </p>
+
+            <div class="hero-actions">
+
+                <a href="#servicos" class="btn btn-outline">
+                    Explorar serviços ↓
+                </a>
+
+                <a href="https://wa.me/258878956680"
+                   target="_blank"
+                   class="btn btn-white whatsapp-btn">
+                    Falar no WhatsApp →
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= MARQUEE ================= -->
+
+<div class="marquee">
+
+    <div class="marquee-track">
+
+        <span>DRONE FILMING</span>
+        <span class="star">✦</span>
+        <span>VIDEO EDITING</span>
+        <span class="star">✦</span>
+        <span>EVENTS</span>
+        <span class="star">✦</span>
+        <span>MAPUTO</span>
+        <span class="star">✦</span>
+        <span>MATOLA</span>
+        <span class="star">✦</span>
+
+        <span>DRONE FILMING</span>
+        <span class="star">✦</span>
+        <span>VIDEO EDITING</span>
+        <span class="star">✦</span>
+        <span>EVENTS</span>
+        <span class="star">✦</span>
+        <span>MAPUTO</span>
+        <span class="star">✦</span>
+        <span>MATOLA</span>
+        <span class="star">✦</span>
+
+    </div>
+
+</div>
+
+
+<!-- ================= INTRO ================= -->
+
+<section class="intro">
+
+    <div class="intro-inner">
+
+        <div class="eyebrow">
+            Sobre a SkyView
+        </div>
+
+        <div class="intro-layout">
+
+            <h2>
+                Não filmamos<br>
+                apenas o momento.<br>
+                <span>Criamos a perspetiva.</span>
+            </h2>
+
+            <p class="intro-copy">
+                A <strong>SkyView AeroView</strong> combina
+                filmagem aérea com edição de vídeo para criar
+                imagens que chamam atenção.
+                <br><br>
+                Desde eventos a projetos, transformamos
+                imagens captadas do ar em conteúdo pronto
+                para apresentar.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SERVICES ================= -->
+
+<section class="services" id="servicos">
+
+    <div class="services-inner">
+
+        <div class="services-top">
+
+            <div class="services-title">
+
+                <div class="eyebrow">
+                    O que fazemos
+                </div>
+
+                <h2>Serviços.</h2>
+
+            </div>
+
+            <p>
+                Uma solução simples: captamos, editamos
+                e entregamos o resultado final.
+            </p>
+
+        </div>
+
+
+        <div class="service-list">
+
+            <div class="service">
+
+                <div class="service-num">01</div>
+
+                <div class="service-name">
+                    Filmagem Aérea
+                </div>
+
+                <div class="service-text">
+                    Filmagem profissional com drone para
+                    espaços, eventos e projetos.
+                </div>
+
+                <div class="service-arrow">↗</div>
+
+            </div>
+
+
+            <div class="service">
+
+                <div class="service-num">02</div>
+
+                <div class="service-name">
+                    Eventos
+                </div>
+
+                <div class="service-text">
+                    Cobertura aérea para casamentos,
+                    celebrações e eventos especiais.
+                </div>
+
+                <div class="service-arrow">↗</div>
+
+            </div>
+
+
+            <div class="service">
+
+                <div class="service-num">03</div>
+
+                <div class="service-name">
+                    Edição
+                </div>
+
+                <div class="service-text">
+                    Montagem e edição das imagens para
+                    criar um vídeo final pronto a apresentar.
+                </div>
+
+                <div class="service-arrow">↗</div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PRICING ================= -->
+
+<section class="pricing" id="precos">
+
+    <div class="pricing-inner">
+
+        <div class="pricing-heading">
+
+            <div>
+
+                <div class="eyebrow">
+                    Investimento
+                </div>
+
+                <h2>Escolha o tempo.</h2>
+
+            </div>
+
+            <p>
+                Preços transparentes para reservar
+                a duração que melhor se adapta ao seu projeto.
+            </p>
+
+        </div>
+
+
+        <div class="pricing-grid">
+
+            <div class="price-card">
+                <span class="price-label">1 hora</span>
+                <div class="price">1.489 MT</div>
+            </div>
+
+            <div class="price-card">
+                <span class="price-label">2 horas</span>
+                <div class="price">2.798 MT</div>
+            </div>
+
+            <div class="price-card">
+                <span class="price-label">4 horas</span>
+                <div class="price">3.998 MT</div>
+            </div>
+
+            <div class="price-card featured">
+
+                <span class="popular">
+                    Mais popular
+                </span>
+
+                <span class="price-label">
+                    8 horas
+                </span>
+
+                <div class="price">
+                    4.998 MT
+                </div>
+
+            </div>
+
+            <div class="price-card">
+                <span class="price-label">12 horas</span>
+                <div class="price">6.998 MT</div>
+            </div>
+
+            <div class="price-card">
+                <span class="price-label">
+                    Dia completo / prolongado
+                </span>
+
+                <div class="price">
+                    9.998 MT
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CONDITIONS ================= -->
+
+<section class="conditions" id="condicoes">
+
+    <div class="conditions-inner">
+
+        <div>
+
+            <div class="eyebrow">
+                Como funciona
+            </div>
+
+            <h2>
+                Simples.<br>
+                Claro.<br>
+                Profissional.
+            </h2>
+
+        </div>
+
+
+        <div class="condition-list">
+
+            <div class="condition">
+
+                <div class="condition-number">
+                    01
+                </div>
+
+                <div>
+                    <h3>Reserva</h3>
+
+                    <p>
+                        50% do valor deve ser pago até
+                        3 dias antes do evento para reservar
+                        a data.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="condition">
+
+                <div class="condition-number">
+                    02
+                </div>
+
+                <div>
+                    <h3>Filmagem e edição</h3>
+
+                    <p>
+                        A equipa realiza a captação aérea
+                        e, quando contratado, a edição
+                        do conteúdo.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="condition">
+
+                <div class="condition-number">
+                    03
+                </div>
+
+                <div>
+                    <h3>Pagamento final</h3>
+
+                    <p>
+                        Os restantes 50% são pagos
+                        após a conclusão do trabalho.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="condition">
+
+                <div class="condition-number">
+                    04
+                </div>
+
+                <div>
+                    <h3>Área de trabalho</h3>
+
+                    <p>
+                        Trabalhamos em Maputo e Matola.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section class="contact" id="contacto">
+
+    <div class="contact-inner">
+
+        <div>
+
+            <div class="eyebrow">
+                Contacto
+            </div>
+
+            <h2>
+                Vamos<br>
+                criar?
+            </h2>
+
+        </div>
+
+
+        <div class="contact-side">
+
+            <a href="https://wa.me/258878956680"
+               target="_blank"
+               class="btn btn-white whatsapp-btn">
+                Falar no WhatsApp →
+            </a>
+
+
+            <div class="contact-item">
+
+                <small>
+                    Telefone / WhatsApp
+                </small>
+
+                <a href="https://wa.me/258878956680"
+                   target="_blank">
+                    +258 87 895 6680
+                </a>
+
+            </div>
+
+
+            <div class="contact-item">
+
+                <small>
+                    Email
+                </small>
+
+                <a href="mailto:cleitomichaque@gmail.com">
+                    cleitomichaque@gmail.com
+                </a>
+
+            </div>
+
+
+            <div class="contact-item">
+
+                <small>
+                    Área
+                </small>
+
+                <p>
+                    Maputo / Matola
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-inner">
+
+        <p>
+            © 2026 SKYVIEW AEROVIEW
+        </p>
+
+        <p>
+            DRONE • FILM • EDIT
+        </p>
+
+    </div>
+
+</footer>
+
+</body>
+</html>
