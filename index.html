@@ -1,1288 +1,4071 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta name="google-site-verification" content="ZvUzcPlINEYuh5s-hTpQqV08PjBIidfBZspQDr-ia5o" />
+  <link rel="icon" type="image/png" href="logo.png">
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>document.documentElement.classList.add('js');</script>
 
-<title>SkyView AeroView — Drone & Visuals</title>
+<title>SkyView | AeroView — Filmagens com Drones em Maputo</title>
+
+<meta name="description" content="SkyView e AeroView: filmagens com drones, casamentos, fotografia aérea, edição de vídeo, realidade virtual e apoio ao cameraman em Maputo e Matola.">
+<meta name="theme-color" content="#060606">
+
+<link rel="icon" type="image/jpeg" href="skyview-cover.jpg?v=2">
+<link rel="apple-touch-icon" href="skyview-cover.jpg?v=2">
+
+<meta property="og:title" content="SkyView | AeroView — Filmagens com Drones">
+<meta property="og:description" content="Filmagem com drones, casamentos, fotografia aérea, edição, realidade virtual e apoio ao cameraman em Maputo e Matola.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://afonsopascoal11-gif.github.io/SkyView-AeroView/">
+<meta property="og:image" content="https://afonsopascoal11-gif.github.io/SkyView-AeroView/skyview-cover.jpg?v=2">
+<meta property="og:image:alt" content="SkyView AeroView">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SkyView | AeroView">
+<meta name="twitter:description" content="Filmagens com drones e produção audiovisual em Maputo e Matola.">
+<meta name="twitter:image" content="https://afonsopascoal11-gif.github.io/SkyView-AeroView/skyview-cover.jpg?v=2">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap" rel="stylesheet">
 
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    font-family:Arial, Helvetica, sans-serif;
-    background:#0a0a0a;
-    color:#fff;
-    overflow-x:hidden;
-}
-
-a{
-    text-decoration:none;
-    color:inherit;
-}
-
-/* ================= HEADER ================= */
-
-header{
-    position:fixed;
-    top:20px;
-    left:50%;
-    transform:translateX(-50%);
-    width:min(1180px,calc(100% - 32px));
-    z-index:100;
-
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-
-    padding:12px 14px 12px 18px;
-
-    background:rgba(10,10,10,.55);
-    backdrop-filter:blur(20px);
-    -webkit-backdrop-filter:blur(20px);
-
-    border:1px solid rgba(255,255,255,.12);
-    border-radius:100px;
-}
-
-.logo{
-    display:flex;
-    align-items:center;
-    gap:11px;
-}
-
-.logo img{
-    width:42px;
-    height:42px;
-    object-fit:contain;
-}
-
-.logo-text strong{
-    display:block;
-    font-size:12px;
-    letter-spacing:1.5px;
-}
-
-.logo-text span{
-    display:block;
-    margin-top:3px;
-    color:#888;
-    font-size:8px;
-    letter-spacing:2px;
-}
-
-nav{
-    display:flex;
-    align-items:center;
-    gap:30px;
-}
-
-nav a{
-    font-size:12px;
-    color:#aaa;
-    transition:.3s;
-}
-
-nav a:hover{
-    color:#fff;
-}
-
-.nav-cta{
-    background:#fff;
-    color:#000;
-    padding:12px 19px;
-    border-radius:100px;
-    font-weight:700;
-}
-
-/* ================= HERO ================= */
-
-.hero{
-    min-height:100vh;
-    position:relative;
-    display:flex;
-    align-items:flex-end;
-
-    padding:0 7vw 75px;
-
-    background:
-        linear-gradient(
-            180deg,
-            rgba(0,0,0,.15) 0%,
-            rgba(0,0,0,.15) 35%,
-            rgba(0,0,0,.88) 100%
-        ),
-        url("https://images.pexels.com/photos/33516340/pexels-photo-33516340.jpeg?cs=srgb&dl=pexels-sinalmultimedia-33516340.jpg&fm=jpg");
-
-    background-size:cover;
-    background-position:center;
-}
-
-.hero-content{
-    width:100%;
-    max-width:1250px;
-    margin:auto;
-}
-
-.hero-top{
-    display:flex;
-    align-items:center;
-    gap:12px;
-    margin-bottom:24px;
-}
-
-.live-dot{
-    width:7px;
-    height:7px;
-    background:#fff;
-    border-radius:50%;
-    box-shadow:0 0 0 5px rgba(255,255,255,.12);
-}
-
-.hero-top span{
-    font-size:10px;
-    text-transform:uppercase;
-    letter-spacing:3px;
-    color:#ddd;
-}
-
-.hero h1{
-    max-width:1100px;
-    font-size:clamp(55px,9vw,125px);
-    line-height:.86;
-    letter-spacing:-7px;
-    font-weight:700;
-}
-
-.hero h1 em{
-    font-style:normal;
-    color:rgba(255,255,255,.48);
-}
-
-.hero-bottom{
-    margin-top:45px;
-
-    display:flex;
-    justify-content:space-between;
-    align-items:flex-end;
-    gap:40px;
-}
-
-.hero-description{
-    max-width:470px;
-    color:#d0d0d0;
-    font-size:15px;
-    line-height:1.8;
-}
-
-.hero-actions{
-    display:flex;
-    gap:12px;
-}
-
-.btn{
-    min-height:54px;
-    padding:16px 25px;
-
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-
-    border-radius:100px;
-
-    font-size:13px;
-    font-weight:700;
-
-    transition:.3s;
-}
-
-.btn:hover{
-    transform:translateY(-3px);
-}
-
-.btn-white{
-    background:#fff;
-    color:#000;
-}
-
-.btn-outline{
-    border:1px solid rgba(255,255,255,.35);
-    color:#fff;
-    background:rgba(255,255,255,.06);
-}
-
-.whatsapp-btn{
-    padding:19px 31px;
-    min-height:58px;
-    font-size:14px;
-}
-
-/* ================= MARQUEE ================= */
-
-.marquee{
-    background:#fff;
-    color:#080808;
-    overflow:hidden;
-    border-bottom:1px solid #ddd;
-}
-
-.marquee-track{
-    width:max-content;
-    display:flex;
-    gap:35px;
-    padding:17px 0;
-    animation:move 25s linear infinite;
-}
-
-.marquee span{
-    font-size:11px;
-    font-weight:700;
-    letter-spacing:3px;
-    text-transform:uppercase;
-}
-
-.marquee .star{
-    font-size:15px;
-}
-
-@keyframes move{
-    from{transform:translateX(0)}
-    to{transform:translateX(-50%)}
-}
-
-/* ================= INTRO ================= */
-
-.intro{
-    background:#0d0d0d;
-    padding:135px 7vw;
-}
-
-.intro-inner{
-    max-width:1250px;
-    margin:auto;
-}
-
-.eyebrow{
-    color:#666;
-    font-size:10px;
-    letter-spacing:3px;
-    text-transform:uppercase;
-}
-
-.intro-layout{
-    margin-top:30px;
-
-    display:grid;
-    grid-template-columns:1.5fr 1fr;
-    gap:100px;
-    align-items:end;
-}
-
-.intro h2{
-    font-size:clamp(42px,6vw,82px);
-    line-height:.95;
-    letter-spacing:-5px;
-}
-
-.intro h2 span{
-    color:#555;
-}
-
-.intro-copy{
-    color:#999;
-    font-size:15px;
-    line-height:1.9;
-}
-
-.intro-copy strong{
-    color:#fff;
-}
-
-/* ================= SERVICES ================= */
-
-.services{
-    background:#f3f2ed;
-    color:#111;
-    padding:125px 7vw;
-}
-
-.services-inner{
-    max-width:1250px;
-    margin:auto;
-}
-
-.services-top{
-    display:flex;
-    justify-content:space-between;
-    align-items:flex-end;
-    gap:50px;
-    margin-bottom:65px;
-}
-
-.services-title h2{
-    margin-top:15px;
-    font-size:clamp(48px,6vw,82px);
-    letter-spacing:-5px;
-}
-
-.services-top p{
-    max-width:370px;
-    color:#777;
-    line-height:1.8;
-    font-size:14px;
-}
-
-.service-list{
-    border-top:1px solid #c9c8c2;
-}
-
-.service{
-    min-height:145px;
-
-    display:grid;
-    grid-template-columns:80px 1.2fr 1fr 55px;
-    align-items:center;
-    gap:30px;
-
-    border-bottom:1px solid #c9c8c2;
+/* =========================================================
+   BASE
+   ========================================================= */
+:root {
+  --bg: #060606;
+  --panel: #111;
+  --white: #fff;
+  --muted: #a3a3a3;
+  --blue: #65d9ff;
+  --gold: #c9a66b;
+  --line: #262626;
+  --accent: var(--blue);
+  --ease: cubic-bezier(.16, 1, .3, 1);
+  --ease-io: cubic-bezier(.77, 0, .175, 1);
+  --mono: "JetBrains Mono", ui-monospace, monospace;
+}
 
-    transition:.4s;
-}
-
-.service:hover{
-    padding:0 20px;
-    background:#e9e8e2;
-}
-
-.service-num{
-    color:#999;
-    font-size:11px;
-    letter-spacing:1px;
-}
-
-.service-name{
-    font-size:30px;
-    letter-spacing:-1.5px;
-    font-weight:600;
-}
-
-.service-text{
-    color:#777;
-    font-size:13px;
-    line-height:1.7;
-}
-
-.service-arrow{
-    width:42px;
-    height:42px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    border:1px solid #bbb;
-    border-radius:50%;
-
-    font-size:18px;
-
-    transition:.4s;
-}
-
-.service:hover .service-arrow{
-    background:#111;
-    color:#fff;
-    transform:rotate(45deg);
-}
-
-/* ================= PRICING ================= */
-
-.pricing{
-    background:#111;
-    padding:130px 7vw;
-}
-
-.pricing-inner{
-    max-width:1250px;
-    margin:auto;
-}
-
-.pricing-heading{
-    display:flex;
-    justify-content:space-between;
-    align-items:flex-end;
-    margin-bottom:60px;
-    gap:30px;
-}
-
-.pricing-heading h2{
-    margin-top:15px;
-    font-size:clamp(45px,6vw,78px);
-    letter-spacing:-5px;
-}
-
-.pricing-heading p{
-    color:#777;
-    max-width:300px;
-    font-size:13px;
-    line-height:1.7;
-}
-
-.pricing-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:12px;
-}
-
-.price-card{
-    min-height:245px;
-    padding:30px;
-
-    border:1px solid #282828;
-    border-radius:20px;
-
-    display:flex;
-    flex-direction:column;
-    justify-content:space-between;
-
-    position:relative;
-
-    transition:.3s;
-}
-
-.price-card:hover{
-    transform:translateY(-5px);
-    border-color:#555;
-}
-
-.price-card.featured{
-    background:#fff;
-    color:#111;
-    border-color:#fff;
-}
-
-.price-label{
-    color:#777;
-    font-size:10px;
-    letter-spacing:2px;
-    text-transform:uppercase;
-}
-
-.price-card.featured .price-label{
-    color:#666;
-}
-
-.price{
-    font-size:40px;
-    font-weight:700;
-    letter-spacing:-2px;
-}
-
-.popular{
-    position:absolute;
-    right:20px;
-    top:20px;
-
-    background:#111;
-    color:#fff;
-
-    padding:7px 10px;
-    border-radius:100px;
-
-    font-size:8px;
-    font-weight:700;
-    letter-spacing:1.5px;
-    text-transform:uppercase;
-}
-
-/* ================= CONDITIONS ================= */
-
-.conditions{
-    background:#f3f2ed;
-    color:#111;
-    padding:120px 7vw;
-}
-
-.conditions-inner{
-    max-width:1250px;
-    margin:auto;
-
-    display:grid;
-    grid-template-columns:1fr 1.4fr;
-    gap:100px;
-}
+@property --ang {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
-.conditions h2{
-    margin-top:15px;
-    font-size:clamp(45px,6vw,75px);
-    line-height:.95;
-    letter-spacing:-5px;
-}
-
-.condition-list{
-    border-top:1px solid #cccac3;
-}
-
-.condition{
-    display:grid;
-    grid-template-columns:55px 1fr;
-    gap:20px;
-
-    padding:28px 0;
-
-    border-bottom:1px solid #cccac3;
-}
-
-.condition-number{
-    color:#999;
-    font-size:11px;
-}
-
-.condition h3{
-    font-size:18px;
-    margin-bottom:8px;
-}
-
-.condition p{
-    max-width:550px;
-    color:#777;
-    font-size:13px;
-    line-height:1.7;
-}
-
-/* ================= CONTACT ================= */
-
-.contact{
-    background:#0b0b0b;
-    padding:135px 7vw;
-}
-
-.contact-inner{
-    max-width:1250px;
-    margin:auto;
-
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:100px;
-}
-
-.contact h2{
-    margin-top:18px;
-    font-size:clamp(55px,8vw,105px);
-    line-height:.86;
-    letter-spacing:-7px;
-}
-
-.contact-side{
-    display:flex;
-    flex-direction:column;
-    justify-content:flex-end;
-}
-
-.contact-side > .whatsapp-btn{
-    width:max-content;
-    margin-bottom:45px;
-}
-
-.contact-item{
-    padding:20px 0;
-    border-bottom:1px solid #292929;
-}
-
-.contact-item:first-of-type{
-    border-top:1px solid #292929;
-}
+html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+
+body {
+  font-family: Inter, sans-serif;
+  background: var(--bg);
+  color: var(--white);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
 
-.contact-item small{
-    display:block;
-    margin-bottom:8px;
+body.loading { overflow: hidden; }
 
-    color:#666;
-    font-size:9px;
-    text-transform:uppercase;
-    letter-spacing:2px;
-}
+::selection { background: var(--blue); color: #061017; }
+
+a { color: inherit; text-decoration: none; }
+button, input, select, textarea { font: inherit; }
+
+.container { width: 90%; max-width: 1180px; margin: auto; position: relative; z-index: 2; }
+
+section { padding: 110px 0; position: relative; overflow: hidden; }
+
+.section-title {
+  font: 700 clamp(32px, 5vw, 52px)/1.15 "Playfair Display", serif;
+  margin: 10px 0 18px;
+}
+
+.section-subtitle { color: var(--muted); max-width: 740px; margin-bottom: 38px; }
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 26px;
+  height: 1px;
+  background: currentColor;
+  transform-origin: left;
+  transition: transform 1s var(--ease) .3s;
+}
+
+.js .eyebrow.reveal:not(.in)::before { transform: scaleX(0); }
+
+.blue { color: var(--blue); }
+.gold { color: var(--gold); }
+
+/* =========================================================
+   BOTÕES
+   ========================================================= */
+.btn {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px 22px;
+  border-radius: 10px;
+  font-weight: 700;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: transform .3s var(--ease), translate .4s var(--ease), box-shadow .4s, border-color .3s, background .3s, color .3s;
+}
 
-.contact-item a,
-.contact-item p{
-    font-size:16px;
+.btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(110deg, transparent 30%, rgba(255,255,255,.45) 50%, transparent 70%);
+  transform: translateX(-120%);
+  transition: transform .8s var(--ease);
 }
 
-.contact-item a:hover{
-    text-decoration:underline;
-}
+.btn:hover::after { transform: translateX(120%); }
+.btn:hover { transform: translateY(-2px); }
 
-/* ================= FOOTER ================= */
+.btn-blue { background: var(--blue); color: #061017; }
+.btn-blue:hover { box-shadow: 0 10px 40px -8px rgba(101,217,255,.6); }
 
-footer{
-    background:#070707;
-    border-top:1px solid #1c1c1c;
-    padding:30px 7vw;
-}
+.btn-gold { background: var(--gold); color: #100d07; }
+.btn-gold:hover { box-shadow: 0 10px 40px -8px rgba(201,166,107,.6); }
 
-.footer-inner{
-    max-width:1250px;
-    margin:auto;
+.btn-outline { border-color: #3a3a3a; color: white; background: rgba(255,255,255,.02); }
+.btn-outline::after { background: linear-gradient(110deg, transparent 30%, rgba(101,217,255,.18) 50%, transparent 70%); }
+.btn-outline:hover { border-color: var(--blue); }
 
-    display:flex;
-    justify-content:space-between;
-    gap:20px;
-}
+.btn .arr { display: inline-block; transition: transform .4s var(--ease); }
+.btn:hover .arr { transform: translateX(4px); }
 
-footer p{
-    color:#555;
-    font-size:10px;
-    letter-spacing:1px;
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255,255,255,.35);
+  transform: scale(0);
+  animation: ripple .7s var(--ease) forwards;
+  pointer-events: none;
 }
-
-/* ================= RESPONSIVE ================= */
-
-@media(max-width:900px){
-
-    header{
-        top:12px;
-    }
 
-    nav{
-        display:none;
-    }
+@keyframes ripple { to { transform: scale(1); opacity: 0; } }
 
-    .hero{
-        padding:0 6vw 55px;
-    }
+/* =========================================================
+   LOADER — DESCOLAGEM
+   ========================================================= */
+.loader { display: none; }
+
+.js .loader {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+.loader-panel {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 50.5%;
+  background:
+    linear-gradient(rgba(101,217,255,.04) 1px, transparent 1px) 0 0/48px 48px,
+    linear-gradient(90deg, rgba(101,217,255,.04) 1px, transparent 1px) 0 0/48px 48px,
+    #050505;
+  transition: transform 1.2s var(--ease-io) .25s;
+}
 
-    .hero h1{
-        letter-spacing:-4px;
-    }
+.loader-panel.top { top: 0; border-bottom: 1px solid rgba(101,217,255,.15); }
+.loader-panel.bottom { bottom: 0; }
+
+.loader.done { pointer-events: none; }
+.loader.done .loader-panel.top { transform: translateY(-101%); }
+.loader.done .loader-panel.bottom { transform: translateY(101%); }
+
+.loader-hud {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  font-family: var(--mono);
+  transition: opacity .5s, transform .8s var(--ease);
+}
 
-    .hero-bottom{
-        flex-direction:column;
-        align-items:flex-start;
-    }
+.loader.done .loader-hud { opacity: 0; transform: scale(1.3); filter: blur(6px); }
 
-    .intro-layout,
-    .conditions-inner,
-    .contact-inner{
-        grid-template-columns:1fr;
-        gap:50px;
-    }
-
-    .pricing-grid{
-        grid-template-columns:1fr 1fr;
-    }
-
-    .service{
-        grid-template-columns:55px 1fr 45px;
-        gap:20px;
-        padding:30px 0;
-    }
-
-    .service-text{
-        grid-column:2;
-    }
-
-    .service-arrow{
-        grid-column:3;
-        grid-row:1 / span 2;
-    }
+.reticle { width: 170px; height: 170px; margin: 0 auto 26px; display: block; overflow: visible; }
+.reticle circle, .reticle path { fill: none; transform-box: view-box; transform-origin: 100px 100px; }
+.reticle .r1 { stroke: rgba(101,217,255,.55); stroke-width: 1.2; stroke-dasharray: 3 9; animation: spin 8s linear infinite; }
+.reticle .r2 { stroke: var(--blue); stroke-width: 2; stroke-dasharray: 110 40; animation: spin 2.4s linear infinite reverse; }
+.reticle .r3 { stroke: rgba(201,166,107,.6); stroke-width: 1; stroke-dasharray: 60 20; animation: spin 4s linear infinite; }
+.reticle .cross { stroke: rgba(255,255,255,.6); stroke-width: 1.2; }
+.reticle .core { fill: var(--blue); animation: pulse 1.2s ease-in-out infinite; }
+
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes pulse { 50% { opacity: .2; } }
+
+.loader-brand { font-family: Inter, sans-serif; font-weight: 800; letter-spacing: 6px; font-size: 14px; margin-bottom: 18px; }
+
+.loader-alt { font-size: 44px; font-weight: 600; letter-spacing: 2px; line-height: 1; }
+.loader-alt small { font-size: 12px; color: var(--muted); letter-spacing: 3px; margin: 0 8px; }
+
+.loader-bar { width: 220px; height: 2px; background: #1d1d1d; margin: 20px auto 12px; overflow: hidden; }
+.loader-bar i { display: block; height: 100%; background: linear-gradient(90deg, var(--blue), var(--gold)); transform: scaleX(0); transform-origin: left; }
+
+.loader-status { font-size: 11px; letter-spacing: 3px; color: var(--muted); text-transform: uppercase; }
+
+/* =========================================================
+   CURSOR PERSONALIZADO
+   ========================================================= */
+.cursor-dot, .cursor-ring { display: none; }
+
+.has-cursor, .has-cursor a, .has-cursor button { cursor: none; }
+.has-cursor input, .has-cursor textarea, .has-cursor select { cursor: auto; }
+
+.has-cursor .cursor-dot, .has-cursor .cursor-ring {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 300;
+  border-radius: 50%;
+}
+
+.cursor-dot { width: 6px; height: 6px; margin: -3px 0 0 -3px; background: var(--blue); }
+
+.cursor-ring {
+  width: 38px;
+  height: 38px;
+  margin: -19px 0 0 -19px;
+  border: 1px solid rgba(101,217,255,.6);
+  transition: transform .35s var(--ease), border-color .3s, background .3s, opacity .3s;
+}
+
+.cursor-ring.hover { transform: scale(1.7); background: rgba(101,217,255,.08); border-color: var(--blue); }
+.cursor-ring.gold { border-color: var(--gold); }
+.cursor-ring.gold.hover { background: rgba(201,166,107,.1); }
+.cursor-ring.down { transform: scale(.75); }
+.cursor-ring.hidden, .cursor-dot.hidden { opacity: 0; }
+
+/* =========================================================
+   NAVEGAÇÃO
+   ========================================================= */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background: rgba(6,6,6,.55);
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  border-bottom: 1px solid rgba(255,255,255,.06);
+  transition: transform .6s var(--ease), background .4s;
+}
+
+nav.scrolled { background: rgba(6,6,6,.9); }
+nav.hide { transform: translateY(-100%); }
+
+.js nav { transform: translateY(-100%); }
+.js body.loaded nav:not(.hide) { transform: none; transition-delay: .9s; }
+.js body.loaded nav.ready { transition-delay: 0s; }
+
+.nav-content { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+
+.brand { font-weight: 800; letter-spacing: -.5px; display: inline-flex; align-items: center; gap: 6px; }
+
+.brand-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--blue);
+  box-shadow: 0 0 12px var(--blue);
+  animation: pulse 1.6s ease-in-out infinite;
+  margin-right: 4px;
+}
+
+.nav-links { display: flex; gap: 22px; align-items: center; overflow-x: auto; scrollbar-width: none; }
+.nav-links::-webkit-scrollbar { display: none; }
+
+.nav-links a { position: relative; font-size: 13px; color: #b5b5b5; white-space: nowrap; padding: 4px 0; transition: color .3s; }
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: var(--blue);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform .5s var(--ease);
+}
+
+.nav-links a:hover, .nav-links a.active { color: white; }
+.nav-links a:hover::after, .nav-links a.active::after { transform: scaleX(1); transform-origin: left; }
+
+.scroll-progress {
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(90deg, var(--blue), var(--gold));
+  transform: scaleX(0);
+  transform-origin: left;
+  box-shadow: 0 0 10px rgba(101,217,255,.6);
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: 120px 0 90px;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: -8%;
+  background: url("paisagemfpv.jpg") center 45%/cover no-repeat;
+  animation: kenburns 24s ease-in-out infinite alternate;
+  will-change: transform;
+  transition: scale 2.6s var(--ease), filter 2.6s var(--ease);
+}
+
+.js body:not(.loaded) .hero-bg { scale: 1.25; filter: blur(14px) brightness(.4); }
+
+@keyframes kenburns {
+  from { transform: scale(1) translate(0, 0); }
+  to { transform: scale(1.12) translate(-2%, -1.5%); }
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(90deg, rgba(0,0,0,.95) 0%, rgba(0,0,0,.7) 45%, rgba(0,0,0,.35) 100%),
+    linear-gradient(0deg, var(--bg) 0%, transparent 30%);
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: .06;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation: grain 1s steps(4) infinite;
+}
+
+@keyframes grain {
+  25% { transform: translate(-2%, 1%); }
+  50% { transform: translate(1%, -2%); }
+  75% { transform: translate(2%, 2%); }
+}
+
+#heroCanvas { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 1; }
+
+.hero-content { position: relative; z-index: 3; max-width: 780px; will-change: transform, opacity; }
+
+.hero h1 { font: 700 clamp(44px, 8vw, 84px)/1.05 "Playfair Display", serif; margin: 15px 0 24px; }
+
+.hero h1 em, .grad {
+  font-style: italic;
+  background: linear-gradient(90deg, var(--blue), #fff 45%, var(--gold) 70%, var(--blue));
+  background-size: 250% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 7s linear infinite;
+}
+
+@keyframes shimmer { to { background-position: -250% 0; } }
+
+.hero p { color: #d0d0d0; font-size: 17px; max-width: 650px; margin-bottom: 30px; }
+
+.hero-actions, .actions, .contact-buttons { display: flex; gap: 12px; flex-wrap: wrap; }
+
+/* HUD da câmara */
+.hud {
+  position: absolute;
+  top: 92px;
+  left: 24px;
+  right: 24px;
+  bottom: 24px;
+  z-index: 2;
+  pointer-events: none;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  color: rgba(255,255,255,.72);
+  transition: opacity 1.4s ease 1.1s;
+}
+
+.js body:not(.loaded) .hud { opacity: 0; }
+
+.hud-c { position: absolute; width: 26px; height: 26px; border-color: rgba(255,255,255,.55); border-style: solid; border-width: 0; }
+.hud-c.tl { top: 0; left: 0; border-top-width: 1.5px; border-left-width: 1.5px; }
+.hud-c.tr { top: 0; right: 0; border-top-width: 1.5px; border-right-width: 1.5px; }
+.hud-c.bl { bottom: 0; left: 0; border-bottom-width: 1.5px; border-left-width: 1.5px; }
+.hud-c.br { bottom: 0; right: 0; border-bottom-width: 1.5px; border-right-width: 1.5px; }
+
+.hud-row { position: absolute; left: 40px; right: 40px; display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+.hud-top { top: 6px; }
+.hud-bottom { bottom: 4px; }
+
+.rec-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ff3b3b;
+  box-shadow: 0 0 10px #ff3b3b;
+  margin-right: 6px;
+  animation: pulse 1s steps(2) infinite;
+}
+
+.bat { display: inline-block; width: 26px; height: 11px; border: 1px solid rgba(255,255,255,.6); border-radius: 2px; padding: 1px; vertical-align: -1px; margin-left: 6px; position: relative; }
+.bat::after { content: ""; position: absolute; right: -4px; top: 3px; width: 2px; height: 4px; background: rgba(255,255,255,.6); }
+.bat i { display: block; height: 100%; width: 98%; background: var(--blue); transition: width 1s; }
+
+.crosshair {
+  position: absolute;
+  right: 16%;
+  top: 46%;
+  width: 120px;
+  height: 120px;
+  margin: -60px -60px 0 0;
+  border: 1px solid rgba(101,217,255,.35);
+  border-radius: 50%;
+}
+
+.crosshair::before, .crosshair::after { content: ""; position: absolute; background: rgba(101,217,255,.7); }
+.crosshair::before { left: 50%; top: -14px; bottom: -14px; width: 1px; }
+.crosshair::after { top: 50%; left: -14px; right: -14px; height: 1px; }
+
+.crosshair span { position: absolute; inset: 14px; border-radius: 50%; border: 1px dashed rgba(201,166,107,.6); animation: spin 14s linear infinite; }
+
+.crosshair b {
+  position: absolute;
+  left: 50%;
+  top: calc(100% + 18px);
+  transform: translateX(-50%);
+  font-weight: 400;
+  white-space: nowrap;
+  color: var(--blue);
+  font-size: 10px;
+}
+
+.scanline {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: linear-gradient(180deg, transparent, rgba(101,217,255,.06), transparent);
+  animation: scan 6s linear infinite;
+}
+
+@keyframes scan { from { top: -120px; } to { top: 100%; } }
+
+.scroll-cue { display: flex; flex-direction: column; align-items: center; gap: 6px; font-size: 10px; letter-spacing: 3px; }
+.scroll-cue i { width: 1px; height: 34px; background: rgba(255,255,255,.2); position: relative; overflow: hidden; }
+.scroll-cue i::after { content: ""; position: absolute; left: 0; width: 1px; height: 40%; background: var(--blue); animation: drip 1.8s var(--ease-io) infinite; }
+
+@keyframes drip { from { top: -40%; } to { top: 100%; } }
+
+/* Cartões de escolha */
+.choice-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin-top: 34px; }
+
+.choice {
+  position: relative;
+  display: block;
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: rgba(14,14,14,.75);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.choice.aero { --accent: var(--gold); }
+.choice h2 { font-size: 30px; margin: 4px 0; }
+.choice p { font-size: 14px; color: #aaa; }
+.choice .btn { margin-top: 20px; }
+
+/* Redes sociais */
+.hero-social { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-top: 26px; }
+.hero-social-label { width: 100%; font-family: var(--mono); font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #ccc; }
+
+.social-links { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+
+.social-link {
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 14px;
+  border: 1px solid #333;
+  border-radius: 999px;
+  color: #ddd;
+  font-size: 12px;
+  background: rgba(0,0,0,.3);
+  transition: border-color .3s, color .3s, transform .3s var(--ease);
+}
+
+.social-link::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--blue);
+  transform: translateY(101%);
+  transition: transform .45s var(--ease);
+  z-index: -1;
+}
+
+.social-link { isolation: isolate; }
+.social-link:hover { border-color: var(--blue); color: #061017; transform: translateY(-2px); }
+.social-link:hover::before { transform: none; }
+
+/* =========================================================
+   CARTÕES: TILT 3D + SPOTLIGHT
+   ========================================================= */
+.tilt { transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)); transform-style: preserve-3d; }
+.tilt:hover { scale: 1.015; }
+
+.spot { position: relative; isolation: isolate; }
+
+.spot::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  z-index: -1;
+  background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%), color-mix(in srgb, var(--accent) 14%, transparent), transparent 45%);
+  opacity: 0;
+  transition: opacity .4s;
+  pointer-events: none;
+}
+
+.spot::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: radial-gradient(260px circle at var(--mx, 50%) var(--my, 50%), var(--accent), transparent 50%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity .4s;
+  pointer-events: none;
+}
+
+.spot:hover::before, .spot:hover::after { opacity: 1; }
+
+/* =========================================================
+   MARQUEE
+   ========================================================= */
+.marquee {
+  position: relative;
+  z-index: 4;
+  overflow: hidden;
+  border-top: 1px solid #1c1c1c;
+  border-bottom: 1px solid #1c1c1c;
+  background: #080808;
+  padding: 20px 0;
+}
+
+.marquee-skew { will-change: transform; }
+
+.marquee-track { display: flex; width: max-content; animation: marquee 38s linear infinite; }
+.marquee:hover .marquee-track { animation-play-state: paused; }
+
+.marquee-track span {
+  font: 700 clamp(22px, 3.4vw, 40px)/1 "Playfair Display", serif;
+  white-space: nowrap;
+  padding: 0 26px;
+  display: inline-flex;
+  align-items: center;
+  gap: 52px;
+}
+
+.marquee-track span:nth-child(even) { color: transparent; -webkit-text-stroke: 1px rgba(255,255,255,.45); }
+.marquee-track span::after { content: "✦"; font-size: .5em; color: var(--gold); -webkit-text-stroke: 0; }
+.marquee-track span:nth-child(3n)::after { color: var(--blue); }
+
+@keyframes marquee { to { transform: translateX(-50%); } }
+
+/* =========================================================
+   SERVIÇOS
+   ========================================================= */
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+
+.service, .partner {
+  background: linear-gradient(160deg, #141414, #0e0e0e);
+  border: 1px solid #242424;
+  border-radius: 16px;
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+}
+
+.service h3, .partner h3 { font-size: 19px; margin: 8px 0 9px; }
+.service p, .partner p { font-size: 14px; color: #aaa; }
+
+.service-head { display: flex; align-items: center; justify-content: space-between; }
+
+.service .num { font-family: var(--mono); font-size: 11px; letter-spacing: 2px; }
+
+.icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #2c2c2c;
+  background: rgba(101,217,255,.05);
+  color: var(--blue);
+  transition: transform .6s var(--ease), box-shadow .4s, background .4s;
+}
+
+.icon svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+
+.service:hover .icon { transform: rotate(-8deg) scale(1.1) translateZ(30px); box-shadow: 0 0 30px -4px rgba(101,217,255,.5); background: rgba(101,217,255,.12); }
+
+.service .btn { margin-top: auto; align-self: flex-start; font-size: 13px; padding: 10px 14px; }
+.service p { margin-bottom: 20px; }
+
+/* =========================================================
+   SKYVIEW / AEROVIEW
+   ========================================================= */
+.sky-section { background: radial-gradient(ellipse at 100% 0, rgba(65,200,255,.08), transparent 40%), #080a0c; }
+.aero-section { --accent: var(--gold); background: radial-gradient(ellipse at 0 0, rgba(201,166,107,.09), transparent 40%), #0b0a08; }
+
+.brand-section { padding: 150px 0; }
+
+.bg-word {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  z-index: 0;
+  font: 800 clamp(110px, 22vw, 320px)/1 Inter, sans-serif;
+  letter-spacing: -.04em;
+  white-space: nowrap;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(101,217,255,.12);
+  pointer-events: none;
+  user-select: none;
+  will-change: translate;
+}
+
+.aero-section .bg-word { -webkit-text-stroke-color: rgba(201,166,107,.14); }
+
+.orb { position: absolute; border-radius: 50%; filter: blur(70px); opacity: .45; pointer-events: none; z-index: 0; animation: float 14s ease-in-out infinite alternate; }
+.orb.o1 { width: 340px; height: 340px; background: rgba(101,217,255,.25); right: -80px; top: 10%; }
+.orb.o2 { width: 260px; height: 260px; background: rgba(101,217,255,.12); left: 10%; bottom: -100px; animation-duration: 18s; }
+.orb.o3 { width: 360px; height: 360px; background: rgba(201,166,107,.22); left: -100px; top: 5%; }
+.orb.o4 { width: 240px; height: 240px; background: rgba(201,166,107,.12); right: 12%; bottom: -80px; animation-duration: 17s; }
+
+@keyframes float {
+  from { transform: translate(0, 0) scale(1); }
+  to { transform: translate(40px, -50px) scale(1.15); }
+}
+
+/* =========================================================
+   PARCERIAS
+   ========================================================= */
+.partners-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+
+.partner { --accent: var(--gold); }
+.partner .partner-tag { font-family: var(--mono); font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); }
+
+.partner-socials { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; padding-top: 18px; }
+
+.partner-socials a {
+  color: #ddd;
+  background: #1b1b1b;
+  border: 1px solid #333;
+  border-radius: 999px;
+  padding: 7px 12px;
+  font-size: 11px;
+  transition: .3s var(--ease);
+}
+
+.partner-socials a:hover { color: #080808; background: var(--gold); border-color: var(--gold); transform: translateY(-2px); }
+
+/* =========================================================
+   PROCESSO
+   ========================================================= */
+.process-grid { position: relative; display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; padding-top: 4px; }
+
+.process-line { position: absolute; top: 0; left: 0; right: 0; height: 2px; background: #262626; }
+.process-line i { position: absolute; inset: 0; background: linear-gradient(90deg, var(--blue), var(--gold)); transform: scaleX(0); transform-origin: left; box-shadow: 0 0 12px rgba(101,217,255,.5); }
+
+.drone {
+  position: absolute;
+  top: -44px;
+  left: 0;
+  width: 44px;
+  height: 44px;
+  margin-left: -22px;
+  color: var(--blue);
+  filter: drop-shadow(0 0 10px rgba(101,217,255,.5));
+  animation: hover 2.2s ease-in-out infinite;
+}
+
+@keyframes hover { 50% { transform: translateY(-5px) rotate(-3deg); } }
+
+.drone svg { width: 100%; height: 100%; overflow: visible; }
+.drone .rotor { transform-box: fill-box; transform-origin: center; animation: spin .18s linear infinite; }
+.drone .led { animation: pulse .8s steps(2) infinite; }
+
+.process-item { position: relative; padding-top: 32px; }
+
+.process-item .dot {
+  position: absolute;
+  top: -6px;
+  left: 0;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #0d0d0d;
+  border: 2px solid #3a3a3a;
+  transition: .5s var(--ease);
+}
+
+.process-item.active .dot { border-color: var(--blue); background: var(--blue); box-shadow: 0 0 0 6px rgba(101,217,255,.15), 0 0 20px var(--blue); }
+
+.process-item span { font-family: var(--mono); color: var(--blue); font-size: 12px; }
+.process-item h3 { margin: 9px 0; transition: color .4s; }
+.process-item p { font-size: 14px; color: #aaa; }
+
+/* =========================================================
+   PEDIDO
+   ========================================================= */
+.request-section { background: radial-gradient(ellipse at center, rgba(101,217,255,.08), transparent 55%), #070707; }
+
+.request-layout { display: grid; grid-template-columns: .8fr 1.2fr; gap: 40px; align-items: start; }
+
+.request-card {
+  position: relative;
+  background: #101010;
+  border: 1px solid #2a2a2a;
+  border-radius: 18px;
+  padding: 28px;
+  transition: border-color .4s, box-shadow .5s;
+}
+
+.request-card:focus-within { border-color: rgba(101,217,255,.4); box-shadow: 0 30px 80px -30px rgba(101,217,255,.25); }
+
+.request-card.flash { animation: flash 1.4s var(--ease); }
+
+@keyframes flash {
+  0% { box-shadow: 0 0 0 0 rgba(101,217,255,.6); border-color: var(--blue); }
+  100% { box-shadow: 0 0 0 26px rgba(101,217,255,0); }
+}
+
+.request-card label { display: block; font-size: 13px; margin: 14px 0 6px; color: #ddd; }
+
+.request-card input,
+.request-card select,
+.request-card textarea {
+  width: 100%;
+  background: #080808;
+  border: 1px solid #333;
+  color: white;
+  border-radius: 9px;
+  padding: 12px 13px;
+  transition: border-color .3s, box-shadow .3s, background .3s;
+}
+
+.request-card input:focus,
+.request-card select:focus,
+.request-card textarea:focus { outline: none; border-color: var(--blue); background: #0a0d0f; box-shadow: 0 0 0 4px rgba(101,217,255,.12); }
+
+.request-card textarea { min-height: 100px; resize: vertical; }
+.request-card .btn { width: 100%; margin-top: 20px; }
+.request-card .btn.sent { background: #3ddc97; }
+
+.hint { font-size: 12px; color: #888; margin-top: 10px; }
+
+/* =========================================================
+   SOBRE
+   ========================================================= */
+.about { background: #0b0b0b; }
+
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+.about p { color: #aaa; margin-bottom: 14px; }
+
+.about-card { position: relative; background: #111; border: 1px solid #262626; border-radius: 18px; padding: 34px; isolation: isolate; }
+
+.about-card::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: 19px;
+  padding: 1.5px;
+  background: conic-gradient(from var(--ang), transparent 0 55%, var(--blue) 72%, var(--gold) 86%, transparent 100%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: ang 5s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes ang { to { --ang: 360deg; } }
+
+.about-card h3 { font: 700 30px/1.2 "Playfair Display", serif; margin-bottom: 14px; }
+
+/* =========================================================
+   CONTACTO
+   ========================================================= */
+.contact { background: #090909; text-align: center; padding: 140px 0; }
+.contact .eyebrow { justify-content: center; }
+.contact p { color: #aaa; margin: 12px 0 24px; }
+.contact-buttons { justify-content: center; }
+.contact-links a { transition: color .3s; }
+.contact-links a:hover { color: var(--blue); }
+
+.radar { position: absolute; left: 50%; top: 50%; width: 0; height: 0; z-index: 0; pointer-events: none; }
+
+.radar span {
+  position: absolute;
+  left: -300px;
+  top: -300px;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  border: 1px solid rgba(101,217,255,.25);
+  animation: radar 6s ease-out infinite;
+  opacity: 0;
+}
+
+
+
+.radar span:nth-child(2) { animation-delay: 2s; }
+.radar span:nth-child(3) { animation-delay: 4s; border-color: rgba(201,166,107,.25); }
+
+@keyframes radar {
+  0% { transform: scale(.1); opacity: .9; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+
+/* =========================================================
+   RODAPÉ
+   ========================================================= */
+footer { border-top: 1px solid #1f1f1f; padding: 30px 0; color: #777; font-size: 12px; }
+
+.footer-content { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+.footer-brand { font-size: 15px; font-weight: 800; color: white; }
+.footer-social { display: flex; flex-direction: column; gap: 10px; }
+.footer-social strong { color: #ddd; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; }
+.footer-contact { display: flex; flex-direction: column; gap: 5px; align-items: flex-end; }
+.footer-phone { color: #aaa; font-size: 13px; }
+.footer-phone:hover { color: var(--blue); }
+
+/* Voltar ao topo */
+.to-top {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 40;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: rgba(10,10,10,.85);
+  backdrop-filter: blur(10px);
+  border: 1px solid #2a2a2a;
+  opacity: 0;
+  transform: translateY(20px) scale(.8);
+  pointer-events: none;
+  transition: .5s var(--ease);
+}
+
+.to-top.show { opacity: 1; transform: none; pointer-events: auto; }
+.to-top:hover { border-color: var(--blue); }
+.to-top svg { position: absolute; inset: -1px; width: 52px; height: 52px; transform: rotate(-90deg); }
+.to-top circle { fill: none; stroke: var(--blue); stroke-width: 2; stroke-dasharray: 150.8; stroke-dashoffset: 150.8; }
+.to-top b { font-size: 16px; transition: transform .4s var(--ease); }
+.to-top:hover b { transform: translateY(-3px); }
+
+/* =========================================================
+   ANIMAÇÕES DE ENTRADA
+   ========================================================= */
+.reveal {
+  transition:
+    opacity 1s var(--ease) var(--d, 0s),
+    translate 1.2s var(--ease) var(--d, 0s),
+    filter 1s var(--ease) var(--d, 0s),
+    transform .35s var(--ease),
+    scale .5s var(--ease),
+    border-color .3s,
+    box-shadow .4s;
+}
+
+.js .reveal:not(.in) { opacity: 0; translate: 0 50px; filter: blur(10px); }
+
+/* Texto palavra a palavra */
+.w { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: .12em; margin-bottom: -.12em; }
+.wi { display: inline-block; transition: transform 1.3s var(--ease) calc(var(--i) * .06s + var(--d, 0s)); }
+.js [data-split]:not(.in) .wi { transform: translateY(115%) rotate(7deg); }
+.hero h1 { --d: .25s; }
+
+/* =========================================================
+   RESPONSIVO
+   ========================================================= */
+@media (max-width: 1000px) {
+  .crosshair, .hud-hide-sm { display: none; }
+}
+
+@media (max-width: 850px) {
+  .nav-content { align-items: flex-start; flex-direction: column; padding: 12px 0; gap: 8px; min-height: 0; }
+  .nav-links { width: 100%; padding-bottom: 4px; }
+  .hero { padding-top: 140px; }
+  .hud { top: 112px; }
+  .services-grid, .partners-grid { grid-template-columns: repeat(2, 1fr); }
+  .process-grid { grid-template-columns: repeat(2, 1fr); row-gap: 40px; }
+  .process-line, .drone { display: none; }
+  .process-item { border-top: 1px solid #333; padding-top: 24px; }
+  .process-item .dot { top: -7px; }
+  .request-layout { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+  section { padding: 76px 0; }
+  .brand-section { padding: 100px 0; }
+  .hero { min-height: 100svh; }
+  .hero-bg { background-position: 58% center; }
+  .hero p { font-size: 15px; }
+  .hud { left: 12px; right: 12px; bottom: 12px; font-size: 9px; }
+  .hud-row { left: 30px; right: 30px; }
+  .scroll-cue { display: none; }
+  .choice-grid, .services-grid, .partners-grid, .process-grid, .about-grid { grid-template-columns: 1fr; }
+  .choice { padding: 23px; }
+  .footer-content { align-items: flex-start; flex-direction: column; }
+  .footer-contact { align-items: flex-start; }
+  .radar span { left: -180px; top: -180px; width: 360px; height: 360px; }
+  .to-top { right: 14px; bottom: 14px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; transition-delay: 0s !important; }
+  .js .reveal:not(.in) { opacity: 1; translate: none; filter: none; }
+  .js [data-split]:not(.in) .wi { transform: none; }
+}
+
+/* =========================================================
+   TABELAS DE PREÇOS — SKYVIEW / AEROVIEW
+   ========================================================= */
+.pricing-section { padding: 100px 0; background: #080808; border-top: 1px solid #202020; }
+.pricing-section.sky-pricing { --price-accent: var(--blue); background: radial-gradient(ellipse at 100% 0, rgba(101,217,255,.08), transparent 42%), #080a0c; }
+.pricing-section.aero-pricing { --price-accent: var(--gold); background: radial-gradient(ellipse at 0 0, rgba(201,166,107,.09), transparent 42%), #0b0a08; }
+.pricing-section[hidden] { display: none !important; }
+.price-group { margin: 34px 0; }
+.price-group h3 { font-size: 22px; margin-bottom: 16px; color: var(--price-accent); }
+.price-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.price-card { border: 1px solid #2b2b2b; background: rgba(16,16,16,.82); border-radius: 13px; padding: 20px; }
+.price-card h4 { font-size: 16px; line-height: 1.45; margin-bottom: 8px; }
+.price-card p { color: #aaa; font-size: 13px; margin-bottom: 12px; }
+.price-value { color: var(--price-accent); font-size: 21px; font-weight: 800; letter-spacing: -.4px; }
+.price-notes { color: #aaa; font-size: 13px; margin: 16px 0; }
+.price-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
+.price-table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+.price-table th, .price-table td { text-align: left; padding: 13px 12px; border-bottom: 1px solid #292929; vertical-align: top; }
+.price-table th { color: var(--price-accent); font-size: 12px; text-transform: uppercase; letter-spacing: 1px; }
+.price-table td { font-size: 14px; color: #ddd; }
+.price-table td:last-child { white-space: nowrap; font-weight: 800; color: var(--price-accent); }
+.price-table-wrap { overflow-x: auto; border: 1px solid #292929; border-radius: 12px; }
+.price-back { margin-bottom: 24px; }
+.pricing-section .section-title { color: var(--price-accent); }
+@media (max-width: 650px) {
+  .price-grid { grid-template-columns: 1fr; }
+  .price-table { min-width: 560px; }
+  .pricing-section { padding: 75px 0; }
 }
-
-@media(max-width:600px){
-
-    header{
-        width:calc(100% - 20px);
-    }
-
-    .logo img{
-        width:38px;
-        height:38px;
-    }
 
-    .logo-text strong{
-        font-size:10px;
-    }
-
-    .hero{
-        min-height:92vh;
-    }
-
-    .hero h1{
-        font-size:54px;
-    }
-
-    .hero-actions{
-        width:100%;
-        flex-direction:column;
-    }
-
-    .hero-actions .btn{
-        width:100%;
-    }
-
-    .intro,
-    .services,
-    .pricing,
-    .conditions,
-    .contact{
-        padding:85px 6vw;
-    }
-
-    .intro-layout{
-        gap:35px;
-    }
-
-    .services-top,
-    .pricing-heading{
-        flex-direction:column;
-        align-items:flex-start;
-    }
-
-    .service{
-        grid-template-columns:35px 1fr 40px;
-        gap:12px;
-        min-height:0;
-        padding:28px 0;
-    }
-
-    .service-name{
-        font-size:23px;
-    }
-
-    .service-text{
-        font-size:12px;
-    }
-
-    .pricing-grid{
-        grid-template-columns:1fr;
-    }
-
-    .price-card{
-        min-height:210px;
-    }
-
-    .contact-side > .whatsapp-btn{
-        width:100%;
-        margin-bottom:30px;
-    }
-
-    .footer-inner{
-        flex-direction:column;
-    }
-}
 </style>
 </head>
 
-<body>
+<body class="loading">
 
-<!-- ================= HEADER ================= -->
+<!-- LOADER: SEQUÊNCIA DE DESCOLAGEM -->
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader-panel top"></div>
+  <div class="loader-panel bottom"></div>
 
-<header>
-
-    <a href="#" class="logo">
-
-        <img src="logo.png" alt="SkyView AeroView">
-
-        <div class="logo-text">
-            <strong>SKYVIEW AEROVIEW</strong>
-            <span>DRONE • FILM • EDIT</span>
-        </div>
-
-    </a>
-
-    <nav>
-        <a href="#servicos">Serviços</a>
-        <a href="#precos">Preços</a>
-        <a href="#condicoes">Condições</a>
-        <a href="#contacto" class="nav-cta">Contacto</a>
-    </nav>
-
-</header>
-
-
-<!-- ================= HERO ================= -->
-
-<section class="hero">
-
-    <div class="hero-content">
-
-        <div class="hero-top">
-            <div class="live-dot"></div>
-            <span>Maputo • Matola</span>
-        </div>
-
-        <h1>
-            Veja o mundo<br>
-            <em>de outro ângulo.</em>
-        </h1>
-
-        <div class="hero-bottom">
-
-            <p class="hero-description">
-                Filmagem aérea e edição de vídeo para eventos,
-                projetos e momentos que merecem ser vistos
-                de uma nova perspetiva.
-            </p>
-
-            <div class="hero-actions">
-
-                <a href="#servicos" class="btn btn-outline">
-                    Explorar serviços ↓
-                </a>
-
-                <a href="https://wa.me/258878956680"
-                   target="_blank"
-                   class="btn btn-white whatsapp-btn">
-                    Falar no WhatsApp →
-                </a>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= MARQUEE ================= -->
-
-<div class="marquee">
-
-    <div class="marquee-track">
-
-        <span>DRONE FILMING</span>
-        <span class="star">✦</span>
-        <span>VIDEO EDITING</span>
-        <span class="star">✦</span>
-        <span>EVENTS</span>
-        <span class="star">✦</span>
-        <span>MAPUTO</span>
-        <span class="star">✦</span>
-        <span>MATOLA</span>
-        <span class="star">✦</span>
-
-        <span>DRONE FILMING</span>
-        <span class="star">✦</span>
-        <span>VIDEO EDITING</span>
-        <span class="star">✦</span>
-        <span>EVENTS</span>
-        <span class="star">✦</span>
-        <span>MAPUTO</span>
-        <span class="star">✦</span>
-        <span>MATOLA</span>
-        <span class="star">✦</span>
-
-    </div>
-
+  <div class="loader-hud">
+    <svg class="reticle" viewBox="0 0 200 200">
+      <circle class="r1" cx="100" cy="100" r="92"/>
+      <circle class="r2" cx="100" cy="100" r="70"/>
+      <circle class="r3" cx="100" cy="100" r="50"/>
+      <path class="cross" d="M100 18v28M100 154v28M18 100h28M154 100h28"/>
+      <circle class="core" cx="100" cy="100" r="4"/>
+    </svg>
+    <div class="loader-brand">SKYVIEW <span class="blue">|</span> <span class="gold">AEROVIEW</span></div>
+    <div class="loader-alt"><small>ALT</small><span id="altNum">000</span><small>M</small></div>
+    <div class="loader-bar"><i id="loaderBar"></i></div>
+    <div class="loader-status" id="loaderStatus">A iniciar sistemas…</div>
+  </div>
 </div>
 
+<div class="cursor-ring" aria-hidden="true"></div>
+<div class="cursor-dot" aria-hidden="true"></div>
 
-<!-- ================= INTRO ================= -->
+<nav id="nav">
+  <div class="container nav-content">
+    <a href="#inicio" class="brand">
+      <span class="brand-dot"></span>SKYVIEW <span class="blue">|</span> <span class="gold">AEROVIEW</span>
+    </a>
 
-<section class="intro">
+    <div class="nav-links">
+      <a href="#inicio">Início</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#skyview">SkyView</a>
+      <a href="#aeroview">AeroView</a>
+      <a href="#parcerias">Parcerias</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#pedido">Solicitar</a>
+    </div>
+  </div>
+  <div class="scroll-progress" id="scrollProgress"></div>
+</nav>
 
-    <div class="intro-inner">
+<!-- CAPA INICIAL -->
 
-        <div class="eyebrow">
-            Sobre a SkyView
-        </div>
+<header class="hero" id="inicio">
+  <div class="hero-bg" id="heroBg"></div>
+  <canvas id="heroCanvas" aria-hidden="true"></canvas>
 
-        <div class="intro-layout">
+  <div class="hud" aria-hidden="true">
+    <span class="hud-c tl"></span><span class="hud-c tr"></span>
+    <span class="hud-c bl"></span><span class="hud-c br"></span>
+    <div class="scanline"></div>
 
-            <h2>
-                Não filmamos<br>
-                apenas o momento.<br>
-                <span>Criamos a perspetiva.</span>
-            </h2>
-
-            <p class="intro-copy">
-                A <strong>SkyView AeroView</strong> combina
-                filmagem aérea com edição de vídeo para criar
-                imagens que chamam atenção.
-                <br><br>
-                Desde eventos a projetos, transformamos
-                imagens captadas do ar em conteúdo pronto
-                para apresentar.
-            </p>
-
-        </div>
-
+    <div class="hud-row hud-top">
+      <div><span class="rec-dot"></span>REC <span id="recTime">00:00:00</span></div>
+      <div class="hud-hide-sm">4K · 60FPS · HDG <span id="tHdg">047</span>°</div>
+      <div>BAT <span id="tBat">98</span>%<span class="bat"><i id="batFill"></i></span></div>
     </div>
 
-</section>
+    <div class="crosshair"><span></span><b>LOCK · MAPUTO</b></div>
 
+    <div class="hud-row hud-bottom">
+      <div class="hud-hide-sm">LAT <span id="tLat">-25.96920</span> · LON <span id="tLon">32.57320</span></div>
+      <div class="scroll-cue">SCROLL<i></i></div>
+      <div>ALT <span id="tAlt">120.0</span>M · VEL <span id="tVel">8.2</span>M/S</div>
+    </div>
+  </div>
 
-<!-- ================= SERVICES ================= -->
+  <div class="container hero-content" id="heroContent">
 
-<section class="services" id="servicos">
+    <span class="eyebrow blue reveal" style="--d:.1s">FILMAGENS AÉREAS · MAPUTO E MATOLA</span>
 
-    <div class="services-inner">
+    <h1 data-split>Uma nova <em>perspetiva</em> para as tuas ideias.</h1>
 
-        <div class="services-top">
+    <p class="reveal" style="--d:.6s">
+      A SkyView e a AeroView oferecem filmagens com drones,
+      fotografia aérea, edição de vídeo e apoio a produções
+      audiovisuais em Maputo e Matola, com opções acessíveis
+      e propostas premium.
+    </p>
 
-            <div class="services-title">
-
-                <div class="eyebrow">
-                    O que fazemos
-                </div>
-
-                <h2>Serviços.</h2>
-
-            </div>
-
-            <p>
-                Uma solução simples: captamos, editamos
-                e entregamos o resultado final.
-            </p>
-
-        </div>
-
-
-        <div class="service-list">
-
-            <div class="service">
-
-                <div class="service-num">01</div>
-
-                <div class="service-name">
-                    Filmagem Aérea
-                </div>
-
-                <div class="service-text">
-                    Filmagem profissional com drone para
-                    espaços, eventos e projetos.
-                </div>
-
-                <div class="service-arrow">↗</div>
-
-            </div>
-
-
-            <div class="service">
-
-                <div class="service-num">02</div>
-
-                <div class="service-name">
-                    Eventos
-                </div>
-
-                <div class="service-text">
-                    Cobertura aérea para casamentos,
-                    celebrações e eventos especiais.
-                </div>
-
-                <div class="service-arrow">↗</div>
-
-            </div>
-
-
-            <div class="service">
-
-                <div class="service-num">03</div>
-
-                <div class="service-name">
-                    Edição
-                </div>
-
-                <div class="service-text">
-                    Montagem e edição das imagens para
-                    criar um vídeo final pronto a apresentar.
-                </div>
-
-                <div class="service-arrow">↗</div>
-
-            </div>
-
-        </div>
-
+    <div class="hero-actions reveal" style="--d:.75s">
+      <a class="btn btn-blue magnetic" href="#servicos">Descobrir serviços <span class="arr">↓</span></a>
+      <a class="btn btn-outline magnetic" href="#pedido">Solicitar orçamento</a>
     </div>
 
-</section>
+    <div class="hero-social reveal" style="--d:.9s">
+      <span class="hero-social-label">Segue-nos nas redes sociais</span>
 
-
-<!-- ================= PRICING ================= -->
-
-<section class="pricing" id="precos">
-
-    <div class="pricing-inner">
-
-        <div class="pricing-heading">
-
-            <div>
-
-                <div class="eyebrow">
-                    Investimento
-                </div>
-
-                <h2>Escolha o tempo.</h2>
-
-            </div>
-
-            <p>
-                Preços transparentes para reservar
-                a duração que melhor se adapta ao seu projeto.
-            </p>
-
-        </div>
-
-
-        <div class="pricing-grid">
-
-            <div class="price-card">
-                <span class="price-label">1 hora</span>
-                <div class="price">1.489 MT</div>
-            </div>
-
-            <div class="price-card">
-                <span class="price-label">2 horas</span>
-                <div class="price">2.798 MT</div>
-            </div>
-
-            <div class="price-card">
-                <span class="price-label">4 horas</span>
-                <div class="price">3.998 MT</div>
-            </div>
-
-            <div class="price-card featured">
-
-                <span class="popular">
-                    Mais popular
-                </span>
-
-                <span class="price-label">
-                    8 horas
-                </span>
-
-                <div class="price">
-                    4.998 MT
-                </div>
-
-            </div>
-
-            <div class="price-card">
-                <span class="price-label">12 horas</span>
-                <div class="price">6.998 MT</div>
-            </div>
-
-            <div class="price-card">
-                <span class="price-label">
-                    Dia completo / prolongado
-                </span>
-
-                <div class="price">
-                    9.998 MT
-                </div>
-            </div>
-
-        </div>
-
+      <a class="social-link" href="https://www.instagram.com/skyviewaeroview/" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
+      <a class="social-link" href="https://www.tiktok.com/@skyview.aeroview" target="_blank" rel="noopener noreferrer">TikTok ↗</a>
+      <a class="social-link" href="https://www.facebook.com/people/SkyView-AeroView/61592560033413/" target="_blank" rel="noopener noreferrer">Facebook ↗</a>
     </div>
 
-</section>
+    <div class="choice-grid">
 
+      <a class="choice sky tilt spot reveal" style="--d:1s" href="#skyview">
+        <span class="eyebrow blue">SERVIÇOS ACESSÍVEIS</span>
+        <h2 class="blue">SkyView</h2>
+        <p>Filmagens com drones e serviços criativos com opções adaptadas a diferentes necessidades.</p>
+        <span class="btn btn-blue">Conhecer SkyView <span class="arr">→</span></span>
+      </a>
 
-<!-- ================= CONDITIONS ================= -->
-
-<section class="conditions" id="condicoes">
-
-    <div class="conditions-inner">
-
-        <div>
-
-            <div class="eyebrow">
-                Como funciona
-            </div>
-
-            <h2>
-                Simples.<br>
-                Claro.<br>
-                Profissional.
-            </h2>
-
-        </div>
-
-
-        <div class="condition-list">
-
-            <div class="condition">
-
-                <div class="condition-number">
-                    01
-                </div>
-
-                <div>
-                    <h3>Reserva</h3>
-
-                    <p>
-                        50% do valor deve ser pago até
-                        3 dias antes do evento para reservar
-                        a data.
-                    </p>
-                </div>
-
-            </div>
-
-
-            <div class="condition">
-
-                <div class="condition-number">
-                    02
-                </div>
-
-                <div>
-                    <h3>Filmagem e edição</h3>
-
-                    <p>
-                        A equipa realiza a captação aérea
-                        e, quando contratado, a edição
-                        do conteúdo.
-                    </p>
-                </div>
-
-            </div>
-
-
-            <div class="condition">
-
-                <div class="condition-number">
-                    03
-                </div>
-
-                <div>
-                    <h3>Pagamento final</h3>
-
-                    <p>
-                        Os restantes 50% são pagos
-                        após a conclusão do trabalho.
-                    </p>
-                </div>
-
-            </div>
-
-
-            <div class="condition">
-
-                <div class="condition-number">
-                    04
-                </div>
-
-                <div>
-                    <h3>Área de trabalho</h3>
-
-                    <p>
-                        Trabalhamos em Maputo e Matola.
-                    </p>
-                </div>
-
-            </div>
-
-        </div>
+      <a class="choice aero tilt spot reveal" style="--d:1.12s" href="#aeroview">
+        <span class="eyebrow gold">PRODUÇÃO PREMIUM</span>
+        <h2 class="gold">AeroView</h2>
+        <p>Produção visual premium para projetos que procuram planeamento, detalhe e acabamento cuidado.</p>
+        <span class="btn btn-gold">Conhecer AeroView <span class="arr">→</span></span>
+      </a>
 
     </div>
+  </div>
+</header>
 
+<!-- FAIXA ANIMADA -->
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-skew" id="marqueeSkew">
+    <div class="marquee-track">
+      <span>Filmagem com drones</span><span>Casamentos</span><span>Fotografia aérea</span><span>Edição de vídeo</span><span>Realidade Virtual</span><span>Apoio ao cameraman</span>
+      <span>Filmagem com drones</span><span>Casamentos</span><span>Fotografia aérea</span><span>Edição de vídeo</span><span>Realidade Virtual</span><span>Apoio ao cameraman</span>
+    </div>
+  </div>
+</div>
+
+<!-- SERVIÇOS -->
+
+<section id="servicos">
+  <div class="container">
+
+    <span class="eyebrow blue reveal">O QUE FAZEMOS</span>
+    <h2 class="section-title" data-split>Serviços para dar vida às tuas <span class="grad">ideias.</span></h2>
+
+    <p class="section-subtitle reveal">
+      Escolhe o serviço que te interessa e envia o teu pedido
+      diretamente. O orçamento depende das necessidades do projeto.
+    </p>
+
+    <div class="services-grid" data-stagger>
+
+      <article class="service tilt spot">
+        <div class="service-head">
+          <span class="num blue">01 / AÉREO</span>
+          <span class="icon"><svg viewBox="0 0 24 24"><circle cx="5" cy="5" r="2.5"/><circle cx="19" cy="5" r="2.5"/><circle cx="5" cy="19" r="2.5"/><circle cx="19" cy="19" r="2.5"/><path d="M7 7l3 3M17 7l-3 3M7 17l3-3M17 17l-3-3"/><rect x="9.5" y="9.5" width="5" height="5" rx="1.5"/></svg></span>
+        </div>
+        <h3>Filmagem com drones</h3>
+        <p>Imagens aéreas para eventos, espaços e projetos, conforme as condições do local.</p>
+        <button class="btn btn-outline" onclick="setRequest('Filmagem com drones')">Solicitar este serviço <span class="arr">→</span></button>
+      </article>
+
+      <article class="service tilt spot">
+        <div class="service-head">
+          <span class="num blue">02 / EVENTOS</span>
+          <span class="icon"><svg viewBox="0 0 24 24"><circle cx="9" cy="14" r="5.5"/><circle cx="15" cy="14" r="5.5"/><path d="M10 3.5l2 2.5 2-2.5"/></svg></span>
+        </div>
+        <h3>Casamentos</h3>
+        <p>Registo visual de casamentos e momentos especiais através de imagens aéreas.</p>
+        <button class="btn btn-outline" onclick="setRequest('Casamentos')">Solicitar este serviço <span class="arr">→</span></button>
+      </article>
+
+      <article class="service tilt spot">
+        <div class="service-head">
+          <span class="num blue">03 / FOTOGRAFIA</span>
+          <span class="icon"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><circle cx="12" cy="13.5" r="3.5"/><path d="M8 7l1.5-3h5L16 7"/></svg></span>
+        </div>
+        <h3>Fotografia aérea</h3>
+        <p>Fotografias de espaços, propriedades, paisagens e ocasiões especiais.</p>
+        <button class="btn btn-outline" onclick="setRequest('Fotografia aérea')">Solicitar este serviço <span class="arr">→</span></button>
+      </article>
+
+      <article class="service tilt spot">
+        <div class="service-head">
+          <span class="num blue">04 / EDIÇÃO</span>
+          <span class="icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v5M14 4v5M10 12.5l5 2.5-5 2.5z"/></svg></span>
+        </div>
+        <h3>Edição de vídeo</h3>
+        <p>Montagem e acabamento de vídeos para eventos, projetos e conteúdos audiovisuais.</p>
+        <button class="btn btn-outline" onclick="setRequest('Edição de vídeo')">Solicitar este serviço <span class="arr">→</span></button>
+      </article>
+
+      <article class="service tilt spot">
+        <div class="service-head">
+          <span class="num blue">05 / EQUIPA</span>
+          <span class="icon"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="14" height="10" rx="2"/><path d="M16 11l6-3v8l-6-3"/></svg></span>
+        </div>
+        <h3>Apoio ao cameraman</h3>
+        <p>Apoio e colaboração em filmagens e produções audiovisuais, mediante disponibilidade.</p>
+        <button class="btn btn-outline" onclick="setRequest('Apoio ao cameraman')">Solicitar este serviço <span class="arr">→</span></button>
+      </article>
+
+      <article class="service tilt spot">
+        <div class="service-head">
+          <span class="num blue">06 / EXPERIÊNCIAS</span>
+          <span class="icon"><svg viewBox="0 0 24 24"><path d="M3 9a2 2 0 012-2h14a2 2 0 012 2v6a2 2 0 01-2 2h-4l-2-3h-2l-2 3H5a2 2 0 01-2-2z"/></svg></span>
+        </div>
+        <h3>Realidade Virtual (VR)</h3>
+        <p>Experiências virtuais para eventos e viagens imersivas a destinos como a China e o Japão.</p>
+        <button class="btn btn-outline" onclick="setRequest('Realidade Virtual (VR)')">Solicitar este serviço <span class="arr">→</span></button>
+      </article>
+
+      <article class="service tilt spot">
+        <div class="service-head">
+          <span class="num blue">07 / PERSONALIZADO</span>
+          <span class="icon"><svg viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 16v4M17 18h4"/></svg></span>
+        </div>
+        <h3>Outro / ainda não definido</h3>
+        <p>Tens outra ideia ou ainda não sabes qual serviço escolher? Explica-nos o que precisas.</p>
+        <button class="btn btn-outline" onclick="setRequest('Outro / ainda não definido')">Falar sobre a minha ideia <span class="arr">→</span></button>
+      </article>
+
+    </div>
+  </div>
 </section>
 
+<!-- SKYVIEW -->
 
-<!-- ================= CONTACT ================= -->
+<section class="sky-section brand-section" id="skyview">
+  <div class="bg-word" data-dir="1" aria-hidden="true">SKYVIEW</div>
+  <div class="orb o1"></div><div class="orb o2"></div>
+
+  <div class="container">
+    <span class="eyebrow blue reveal">ACESSÍVEL E FLEXÍVEL</span>
+    <h2 class="section-title" data-split>SkyView: serviços que cabem no teu projeto.</h2>
+
+    <p class="section-subtitle reveal">
+      A SkyView centra-se em filmagens aéreas acessíveis e serviços
+      criativos para pessoas, pequenos negócios e organizações.
+      Conta-nos o que precisas para prepararmos uma proposta.
+    </p>
+
+    <div class="actions reveal" style="--d:.15s">
+      <button class="btn btn-blue magnetic" onclick="setRequest('Pedido geral SkyView','SkyView')">Solicitar à SkyView <span class="arr">→</span></button>
+      <a class="btn btn-outline magnetic" href="#pedido">Ver formulário de pedido</a>
+      <a class="btn btn-outline magnetic" href="precos-skyview.html" target="_blank" rel="noopener">Ver tabela de preços <span class="arr">↗</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- AEROVIEW -->
+
+<section class="aero-section brand-section" id="aeroview">
+  <div class="bg-word" data-dir="-1" aria-hidden="true">AEROVIEW</div>
+  <div class="orb o3"></div><div class="orb o4"></div>
+
+  <div class="container">
+    <span class="eyebrow gold reveal">PRODUÇÃO VISUAL PREMIUM</span>
+    <h2 class="section-title" data-split>AeroView: outra perspetiva. Mais possibilidades.</h2>
+
+    <p class="section-subtitle reveal">
+      A AeroView é a opção premium para produções aéreas e
+      audiovisuais que pedem planeamento, atenção ao detalhe e
+      uma apresentação cuidada. Cada proposta depende do projeto.
+    </p>
+
+    <div class="actions reveal" style="--d:.15s">
+      <button class="btn btn-gold magnetic" onclick="setRequest('Pedido geral AeroView','AeroView')">Solicitar à AeroView <span class="arr">→</span></button>
+      <a class="btn btn-outline magnetic" href="#pedido">Ver formulário de pedido</a>
+      <a class="btn btn-gold magnetic" href="precos-aeroview.html" target="_blank" rel="noopener">Ver tabela de preços <span class="arr">↗</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- TABELAS DE PREÇOS: ABREM COMO PÁGINAS DENTRO DO MESMO SITE -->
+
+
+
+
+<!-- PARCERIAS -->
+
+<section id="parcerias">
+  <div class="container">
+
+    <span class="eyebrow gold reveal">REDE DE COLABORAÇÃO</span>
+    <h2 class="section-title" data-split>Parcerias e projetos em conjunto.</h2>
+
+    <p class="section-subtitle reveal">
+      Conhece algumas das parcerias e áreas de colaboração
+      associadas à SkyView AeroView.
+    </p>
+
+    <div class="partners-grid" data-stagger>
+
+      <article class="partner tilt spot">
+        <span class="partner-tag">Eventos</span>
+        <h3>Helena Eventos</h3>
+        <p>Decoração e organização de celebrações especiais.</p>
+        <div class="partner-socials">
+          <a href="https://www.tiktok.com/@helena.eventos?_r=1&_t=ZS-9AiqONplst5" target="_blank" rel="noopener noreferrer">TikTok ↗</a>
+          <a href="https://www.instagram.com/helenaeventos1/" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
+          <a href="https://www.facebook.com/profile.php?id=61594834520803" target="_blank" rel="noopener noreferrer">Facebook ↗</a>
+        </div>
+      </article>
+
+      <article class="partner tilt spot">
+        <span class="partner-tag">Entregas</span>
+        <h3>CCC Express Delivery</h3>
+        <p>Serviços de entrega e logística.</p>
+        <div class="partner-socials">
+          <a href="https://www.tiktok.com/@cccexpressdelivery1" target="_blank" rel="noopener noreferrer">TikTok ↗</a>
+          <a href="https://www.instagram.com/cccexpressdelivery" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
+          <a href="https://www.facebook.com/profile.php?id=61573305728222" target="_blank" rel="noopener noreferrer">Facebook ↗</a>
+        </div>
+      </article>
+
+      <article class="partner tilt spot">
+        <span class="partner-tag">Drones</span>
+        <h3>CCC Clube de Drones</h3>
+        <p>Comunidade dedicada aos drones, FPV e corridas.</p>
+        <div class="partner-socials">
+          <a href="https://www.tiktok.com/@ccc.clube.de.dron" target="_blank" rel="noopener noreferrer">TikTok ↗</a>
+          <a href="https://www.facebook.com/profile.php?id=61590607066701" target="_blank" rel="noopener noreferrer">Facebook ↗</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROCESSO -->
+
+<section id="processo">
+  <div class="container">
+
+    <span class="eyebrow blue reveal">COMO FUNCIONA</span>
+    <h2 class="section-title" data-split>Um pedido simples, do início ao fim.</h2>
+
+    <p class="section-subtitle reveal">
+      Não precisas de escolher um pacote antes de explicar a tua ideia.
+    </p>
+
+    <div class="process-grid" id="processGrid">
+      <div class="process-line" aria-hidden="true">
+        <i id="processFill"></i>
+        <div class="drone" id="processDrone">
+          <svg viewBox="0 0 64 64">
+            <g stroke="currentColor" stroke-width="3" stroke-linecap="round">
+              <line x1="14" y1="14" x2="50" y2="50"/><line x1="50" y1="14" x2="14" y2="50"/>
+            </g>
+            <rect x="23" y="23" width="18" height="18" rx="6" fill="currentColor"/>
+            <circle class="led" cx="32" cy="27" r="2" fill="#ff3b3b"/>
+            <g fill="currentColor" opacity=".55">
+              <ellipse class="rotor" cx="14" cy="14" rx="12" ry="2.2"/>
+              <ellipse class="rotor" cx="50" cy="14" rx="12" ry="2.2"/>
+              <ellipse class="rotor" cx="14" cy="50" rx="12" ry="2.2"/>
+              <ellipse class="rotor" cx="50" cy="50" rx="12" ry="2.2"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+
+      <div class="process-item reveal" style="--d:0s">
+        <span class="dot"></span>
+        <span>01</span>
+        <h3>Escolhe o serviço</h3>
+        <p>Indica o que pretendes realizar.</p>
+      </div>
+
+      <div class="process-item reveal" style="--d:.1s">
+        <span class="dot"></span>
+        <span>02</span>
+        <h3>Escolhe a marca</h3>
+        <p>SkyView para opções acessíveis ou AeroView para propostas premium.</p>
+      </div>
+
+      <div class="process-item reveal" style="--d:.2s">
+        <span class="dot"></span>
+        <span>03</span>
+        <h3>Conta-nos a ideia</h3>
+        <p>Indica o local, a data e os detalhes importantes.</p>
+      </div>
+
+      <div class="process-item reveal" style="--d:.3s">
+        <span class="dot"></span>
+        <span>04</span>
+        <h3>Recebe uma proposta</h3>
+        <p>O pedido abre no WhatsApp para confirmares e enviares.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FORMULÁRIO DE PEDIDO -->
+
+<section class="request-section" id="pedido">
+  <div class="container request-layout">
+
+    <div>
+      <span class="eyebrow blue reveal">PEDIDO DE ORÇAMENTO</span>
+      <h2 class="section-title" data-split>Vamos falar sobre o teu projeto.</h2>
+
+      <p class="section-subtitle reveal">
+        Escolhe a marca, descreve o que precisas e envia o pedido
+        pelo WhatsApp. O orçamento depende do serviço e dos
+        requisitos do projeto.
+      </p>
+
+      <p class="hint reveal">
+        O botão prepara uma mensagem. Revê os dados e envia-a
+        para concluir o pedido.
+      </p>
+    </div>
+
+    <form class="request-card reveal" style="--d:.15s" id="requestForm">
+
+      <label for="brandChoice">Que marca preferes?</label>
+      <select id="brandChoice" required>
+        <option value="">Escolher marca</option>
+        <option value="SkyView — serviços acessíveis">SkyView — serviços acessíveis</option>
+        <option value="AeroView — serviços premium">AeroView — serviços premium</option>
+        <option value="Ainda não sei; preciso de orientação">Preciso de orientação</option>
+      </select>
+
+      <label for="serviceChoice">Serviço pretendido</label>
+      <select id="serviceChoice" required>
+        <option value="">Escolher serviço</option>
+        <option>Filmagem com drones</option>
+        <option>Casamentos</option>
+        <option>Fotografia aérea</option>
+        <option>Edição de vídeo</option>
+        <option>Apoio ao cameraman</option>
+        <option>Realidade Virtual (VR)</option>
+        <option>Outro / ainda não definido</option>
+      </select>
+
+      <label for="projectDate">Data pretendida (opcional)</label>
+      <input id="projectDate" type="date">
+
+      <label for="projectLocation">Local do projeto</label>
+      <input id="projectLocation" placeholder="Ex.: Maputo, Matola">
+
+      <label for="projectDetails">Conta-nos o que precisas</label>
+      <textarea id="projectDetails" placeholder="Descreve a tua ideia, evento ou projeto." required></textarea>
+
+      <button class="btn btn-blue" type="submit" id="submitBtn">
+        Preparar pedido no WhatsApp <span class="arr">→</span>
+      </button>
+
+      <p class="hint">O pedido só será enviado depois de confirmares a mensagem no WhatsApp.</p>
+    </form>
+  </div>
+</section>
+
+<!-- SOBRE -->
+
+<section class="about" id="sobre">
+  <div class="container about-grid">
+
+    <div>
+      <span class="eyebrow blue reveal">QUEM SOMOS</span>
+      <h2 class="section-title" data-split>Criatividade, tecnologia e novas perspetivas.</h2>
+
+      <p class="reveal">
+        A SkyView AeroView reúne serviços de filmagem aérea com
+        drones, fotografia e produção visual, com opções pensadas
+        para diferentes tipos de projeto.
+      </p>
+
+      <p class="reveal" style="--d:.1s">
+        Trabalhamos a partir de Maputo e Matola, mediante
+        disponibilidade, condições do local e requisitos de
+        segurança aplicáveis.
+      </p>
+    </div>
+
+    <div class="about-card tilt spot reveal" style="--d:.2s">
+      <h3>Duas marcas.<br><span class="blue">Uma visão.</span></h3>
+      <p>
+        A SkyView destaca opções acessíveis e flexíveis.
+        A AeroView posiciona-se no segmento premium.
+        A melhor opção depende dos objetivos e das necessidades
+        de cada cliente.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACTO -->
 
 <section class="contact" id="contacto">
+  <div class="radar" aria-hidden="true"><span></span><span></span><span></span></div>
 
-    <div class="contact-inner">
+  <div class="container">
+    <span class="eyebrow blue reveal">CONTACTO</span>
+    <h2 class="section-title" data-split>Tens uma ideia? Vamos <span class="grad">conversar.</span></h2>
 
-        <div>
+    <p class="reveal">Envia um pedido pelo WhatsApp ou escreve-nos por email.</p>
 
-            <div class="eyebrow">
-                Contacto
-            </div>
-
-            <h2>
-                Vamos<br>
-                criar?
-            </h2>
-
-        </div>
-
-
-        <div class="contact-side">
-
-            <a href="https://wa.me/258878956680"
-               target="_blank"
-               class="btn btn-white whatsapp-btn">
-                Falar no WhatsApp →
-            </a>
-
-
-            <div class="contact-item">
-
-                <small>
-                    Telefone / WhatsApp
-                </small>
-
-                <a href="https://wa.me/258878956680"
-                   target="_blank">
-                    +258 87 895 6680
-                </a>
-
-            </div>
-
-
-            <div class="contact-item">
-
-                <small>
-                    Email
-                </small>
-
-                <a href="mailto:cleitomichaque@gmail.com">
-                    cleitomichaque@gmail.com
-                </a>
-
-            </div>
-
-
-            <div class="contact-item">
-
-                <small>
-                    Área
-                </small>
-
-                <p>
-                    Maputo / Matola
-                </p>
-
-            </div>
-
-        </div>
-
+    <div class="contact-buttons reveal" style="--d:.1s">
+      <a class="btn btn-blue magnetic"
+         href="https://wa.me/258878956680?text=Ol%C3%A1%21%20Gostaria%20de%20falar%20sobre%20um%20projeto%20com%20a%20SkyView%20AeroView."
+         target="_blank" rel="noopener noreferrer">
+        Falar no WhatsApp
+      </a>
+      <a class="btn btn-outline magnetic" href="mailto:skyviewaeroview@gmail.com">Enviar email</a>
     </div>
 
+    <div class="contact-links reveal" style="--d:.2s">
+      <p><a href="tel:+258878956680">+258 87 895 6680</a></p>
+      <p><a href="mailto:skyviewaeroview@gmail.com">skyviewaeroview@gmail.com</a></p>
+    </div>
+  </div>
 </section>
 
-
-<!-- ================= FOOTER ================= -->
+<!-- RODAPÉ -->
 
 <footer>
+  <div class="container footer-content">
 
-    <div class="footer-inner">
-
-        <p>
-            © 2026 SKYVIEW AEROVIEW
-        </p>
-
-        <p>
-            DRONE • FILM • EDIT
-        </p>
-
+    <div class="footer-brand">
+      SKYVIEW <span class="blue">|</span> <span class="gold">AEROVIEW</span>
     </div>
 
+    <div>© 2026 SkyView | AeroView. Todos os direitos reservados.</div>
+
+    <div class="footer-social">
+      <strong>Segue-nos nas redes sociais</strong>
+      <div class="social-links">
+        <a class="social-link" href="https://www.instagram.com/skyviewaeroview/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a class="social-link" href="https://www.tiktok.com/@skyview.aeroview" target="_blank" rel="noopener noreferrer">TikTok</a>
+        <a class="social-link" href="https://www.facebook.com/people/SkyView-AeroView/61592560033413/" target="_blank" rel="noopener noreferrer">Facebook</a>
+      </div>
+    </div>
+
+    <div class="footer-contact">
+      <a href="#contacto">Contacto</a>
+      <a href="tel:+258878956680" class="footer-phone">+258 87 895 6680</a>
+    </div>
+
+  </div>
 </footer>
 
+<a href="#inicio" class="to-top" id="toTop" aria-label="Voltar ao topo">
+  <svg viewBox="0 0 52 52"><circle id="toTopRing" cx="26" cy="26" r="24"/></svg>
+  <b>↑</b>
+</a>
+
+<script>
+/* =========================================================
+   CONFIGURAÇÃO
+   ========================================================= */
+const $ = (s, c = document) => c.querySelector(s);
+const $$ = (s, c = document) => [...c.querySelectorAll(s)];
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const finePointer = matchMedia('(hover: hover) and (pointer: fine)').matches;
+const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
+
+/* =========================================================
+   TEXTO PALAVRA A PALAVRA
+   ========================================================= */
+$$('[data-split]').forEach(el => {
+  const nodes = [...el.childNodes];
+  el.textContent = '';
+  let i = 0;
+  const wrap = node => {
+    const outer = document.createElement('span');
+    outer.className = 'w';
+    const inner = document.createElement('span');
+    inner.className = 'wi';
+    inner.style.setProperty('--i', i++);
+    inner.append(node);
+    outer.append(inner);
+    return outer;
+  };
+  nodes.forEach(node => {
+    if (node.nodeType === 3) {
+      node.textContent.split(/(\s+)/).forEach(t => {
+        if (!t) return;
+        if (/^\s+$/.test(t)) el.append(document.createTextNode(' '));
+        else el.append(wrap(document.createTextNode(t)));
+      });
+    } else if (node.nodeName === 'BR') {
+      el.append(node);
+    } else {
+      el.append(wrap(node));
+    }
+  });
+});
+
+/* Entrada em cascata nas grelhas */
+$$('[data-stagger]').forEach(grid => {
+  [...grid.children].forEach((child, i) => {
+    child.classList.add('reveal');
+    child.style.setProperty('--d', (i * 0.08) + 's');
+  });
+});
+
+/* =========================================================
+   LOADER — DESCOLAGEM
+   ========================================================= */
+const loader = $('#loader');
+const altNum = $('#altNum');
+const loaderBar = $('#loaderBar');
+const loaderStatus = $('#loaderStatus');
+const steps = ['A iniciar sistemas', 'A calibrar GPS', 'A ligar motores', 'Descolagem'];
+const DUR = reduce ? 200 : 2100;
+const t0 = performance.now();
+let finished = false;
+
+function loaderTick(now) {
+  if (finished) return;
+  const p = Math.min((now - t0) / DUR, 1);
+  const e = 1 - Math.pow(1 - p, 3);
+  altNum.textContent = String(Math.round(e * 120)).padStart(3, '0');
+  loaderBar.style.transform = `scaleX(${e})`;
+  loaderStatus.textContent = steps[Math.min(steps.length - 1, Math.floor(p * steps.length))] + '…';
+  if (p < 1) requestAnimationFrame(loaderTick);
+}
+requestAnimationFrame(loaderTick);
+
+const wait = ms => new Promise(r => setTimeout(r, ms));
+const pageLoaded = new Promise(r => {
+  if (document.readyState === 'complete') r();
+  else addEventListener('load', r, { once: true });
+});
+
+Promise.all([wait(DUR + 200), Promise.race([pageLoaded, wait(4500)])]).then(finishLoader);
+loader.addEventListener('click', finishLoader);
+
+function finishLoader() {
+  if (finished) return;
+  finished = true;
+  altNum.textContent = '120';
+  loaderBar.style.transform = 'scaleX(1)';
+  loaderStatus.textContent = 'Em voo ✓';
+  setTimeout(() => {
+    loader.classList.add('done');
+    document.body.classList.remove('loading');
+    document.body.classList.add('loaded');
+    startReveals();
+    setTimeout(() => { loader.remove(); $('#nav').classList.add('ready'); }, 1700);
+  }, reduce ? 0 : 250);
+}
+
+/* =========================================================
+   REVELAÇÃO AO FAZER SCROLL
+   ========================================================= */
+function startReveals() {
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+  $$('.reveal, [data-split]').forEach(el => io.observe(el));
+}
+
+/* =========================================================
+   NAVEGAÇÃO, PROGRESSO E PARALLAX
+   ========================================================= */
+const nav = $('#nav');
+const progress = $('#scrollProgress');
+const toTop = $('#toTop');
+const toTopRing = $('#toTopRing');
+const heroBg = $('#heroBg');
+const heroContent = $('#heroContent');
+const bgWords = $$('.bg-word');
+const processGrid = $('#processGrid');
+const processFill = $('#processFill');
+const processDrone = $('#processDrone');
+const processItems = $$('.process-item');
+const RING = 2 * Math.PI * 24;
+
+let lastY = scrollY;
+let velocity = 0;
+let ticking = false;
+
+function onScroll() {
+  if (!ticking) { requestAnimationFrame(update); ticking = true; }
+}
+
+function update() {
+  ticking = false;
+  const y = scrollY;
+  const vh = innerHeight;
+  const max = document.documentElement.scrollHeight - vh;
+  const p = max > 0 ? y / max : 0;
+
+  progress.style.transform = `scaleX(${p})`;
+  toTopRing.style.strokeDashoffset = RING * (1 - p);
+  toTop.classList.toggle('show', y > 700);
+
+  nav.classList.toggle('scrolled', y > 40);
+  if (document.body.classList.contains('loaded')) {
+    if (y > lastY + 4 && y > 500) nav.classList.add('hide');
+    else if (y < lastY - 4) nav.classList.remove('hide');
+  }
+
+  velocity = y - lastY;
+  lastY = y;
+
+  if (!reduce) {
+    if (y < vh * 1.3) {
+      heroBg.style.translate = `0 ${y * 0.35}px`;
+      heroContent.style.translate = `0 ${y * 0.18}px`;
+      heroContent.style.opacity = clamp(1 - y / (vh * 0.95), 0, 1);
+    }
+
+    bgWords.forEach(w => {
+      const r = w.parentElement.getBoundingClientRect();
+      if (r.bottom < 0 || r.top > vh) return;
+      const prog = (vh - r.top) / (vh + r.height);
+      const dir = Number(w.dataset.dir) || 1;
+      w.style.translate = `calc(-50% + ${(prog - 0.5) * -40 * dir}%) -50%`;
+    });
+  }
+
+  /* Linha do processo + drone */
+  const r = processGrid.getBoundingClientRect();
+  const pp = clamp((vh * 0.8 - r.top) / (vh * 0.55), 0, 1);
+  processFill.style.transform = `scaleX(${pp})`;
+  processDrone.style.left = (pp * 100) + '%';
+  processItems.forEach((item, i) => {
+    item.classList.toggle('active', pp > 0.02 && pp >= i / processItems.length);
+  });
+}
+
+addEventListener('scroll', onScroll, { passive: true });
+addEventListener('resize', onScroll);
+update();
+
+/* Faixa animada inclina com a velocidade do scroll */
+if (!reduce) {
+  const skewEl = $('#marqueeSkew');
+  let skew = 0;
+  (function marqueeLoop() {
+    const target = clamp(velocity * 0.6, -12, 12);
+    skew += (target - skew) * 0.12;
+    velocity *= 0.88;
+    skewEl.style.transform = `skewX(${skew.toFixed(2)}deg)`;
+    requestAnimationFrame(marqueeLoop);
+  })();
+}
+
+/* Link ativo no menu */
+const navLinks = $$('.nav-links a');
+const sectionIO = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id));
+  });
+}, { rootMargin: '-45% 0px -50% 0px' });
+$$('header[id], section[id]').forEach(s => sectionIO.observe(s));
+
+/* =========================================================
+   TELEMETRIA DO DRONE (HUD)
+   ========================================================= */
+(function telemetry() {
+  const start = Date.now();
+  let bat = 98;
+  const recTime = $('#recTime'), tAlt = $('#tAlt'), tVel = $('#tVel'),
+        tLat = $('#tLat'), tLon = $('#tLon'), tHdg = $('#tHdg'),
+        tBat = $('#tBat'), batFill = $('#batFill');
+
+  setInterval(() => {
+    const s = (Date.now() - start) / 1000;
+    const hh = String(Math.floor(s / 3600)).padStart(2, '0');
+    const mm = String(Math.floor(s / 60) % 60).padStart(2, '0');
+    const ss = String(Math.floor(s) % 60).padStart(2, '0');
+    recTime.textContent = `${hh}:${mm}:${ss}`;
+    tAlt.textContent = (120 + Math.sin(s * 0.8) * 1.6).toFixed(1);
+    tVel.textContent = (8.2 + Math.sin(s * 1.3) * 0.9).toFixed(1);
+    tLat.textContent = (-25.96920 + Math.sin(s * 0.11) * 0.0004).toFixed(5);
+    tLon.textContent = (32.57320 + Math.cos(s * 0.09) * 0.0004).toFixed(5);
+    tHdg.textContent = String(Math.round(47 + Math.sin(s * 0.2) * 6)).padStart(3, '0');
+  }, 200);
+
+  setInterval(() => {
+    if (bat > 21) bat--;
+    tBat.textContent = bat;
+    batFill.style.width = bat + '%';
+  }, 15000);
+})();
+
+/* =========================================================
+   PARTÍCULAS INTERATIVAS NA CAPA
+   ========================================================= */
+(function particles() {
+  const canvas = $('#heroCanvas');
+  const hero = $('#inicio');
+  if (!canvas || reduce) return;
+
+  const ctx = canvas.getContext('2d');
+  let w = 0, h = 0, parts = [], visible = true;
+  const mouse = { x: -999, y: -999 };
+
+  const make = anywhere => ({
+    x: Math.random() * w,
+    y: anywhere ? Math.random() * h : h + 10,
+    r: Math.random() * 1.6 + 0.3,
+    vx: (Math.random() - 0.5) * 0.15,
+    vy: -(Math.random() * 0.35 + 0.08),
+    a: Math.random() * 0.6 + 0.15,
+    c: Math.random() < 0.8 ? '101,217,255' : '201,166,107'
+  });
+
+  function resize() {
+    const nw = canvas.clientWidth, nh = canvas.clientHeight;
+    if (nw === w && Math.abs(nh - h) < 120) return;
+    const dpr = Math.min(devicePixelRatio || 1, 2);
+    w = nw; h = nh;
+    canvas.width = w * dpr;
+    canvas.height = h * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    const n = Math.round(Math.min(95, (w * h) / 13000));
+    parts = Array.from({ length: n }, () => make(true));
+  }
+
+  function draw() {
+    if (visible) {
+      ctx.clearRect(0, 0, w, h);
+      for (const p of parts) {
+        const dx = p.x - mouse.x, dy = p.y - mouse.y;
+        const d = Math.hypot(dx, dy);
+        if (d < 120 && d > 0) {
+          const f = (120 - d) / 120;
+          p.x += (dx / d) * f * 2.2;
+          p.y += (dy / d) * f * 2.2;
+        }
+        if (d < 170) {
+          ctx.strokeStyle = `rgba(101,217,255,${(1 - d / 170) * 0.22})`;
+          ctx.lineWidth = 0.6;
+          ctx.beginPath();
+          ctx.moveTo(p.x, p.y);
+          ctx.lineTo(mouse.x, mouse.y);
+          ctx.stroke();
+        }
+        p.x += p.vx;
+        p.y += p.vy;
+        if (p.y < -10 || p.x < -10 || p.x > w + 10) Object.assign(p, make(false));
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(${p.c},${p.a})`;
+        ctx.fill();
+      }
+    }
+    requestAnimationFrame(draw);
+  }
+
+  hero.addEventListener('pointermove', e => {
+    const r = canvas.getBoundingClientRect();
+    mouse.x = e.clientX - r.left;
+    mouse.y = e.clientY - r.top;
+  });
+  hero.addEventListener('pointerleave', () => { mouse.x = mouse.y = -999; });
+  new IntersectionObserver(([e]) => { visible = e.isIntersecting; }).observe(hero);
+  addEventListener('resize', resize);
+  resize();
+  draw();
+})();
+
+/* =========================================================
+   CURSOR, TILT 3D, SPOTLIGHT E BOTÕES MAGNÉTICOS
+   ========================================================= */
+$$('.spot').forEach(el => {
+  el.addEventListener('pointermove', e => {
+    const r = el.getBoundingClientRect();
+    el.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+    el.style.setProperty('--my', (e.clientY - r.top) + 'px');
+  });
+});
+
+if (finePointer && !reduce) {
+  /* Cursor */
+  const dot = $('.cursor-dot');
+  const ring = $('.cursor-ring');
+  let mx = innerWidth / 2, my = innerHeight / 2, rx = mx, ry = my;
+  document.body.classList.add('has-cursor');
+
+  addEventListener('pointermove', e => {
+    mx = e.clientX; my = e.clientY;
+    dot.style.translate = `${mx}px ${my}px`;
+    dot.classList.remove('hidden'); ring.classList.remove('hidden');
+  });
+
+  (function cursorLoop() {
+    rx += (mx - rx) * 0.18;
+    ry += (my - ry) * 0.18;
+    ring.style.translate = `${rx}px ${ry}px`;
+    requestAnimationFrame(cursorLoop);
+  })();
+
+  document.addEventListener('pointerover', e => {
+    ring.classList.toggle('hover', !!e.target.closest('a, button, select, .tilt'));
+    ring.classList.toggle('gold', !!e.target.closest('.aero, .aero-section, .partner, .btn-gold'));
+  });
+  document.addEventListener('pointerdown', () => ring.classList.add('down'));
+  document.addEventListener('pointerup', () => ring.classList.remove('down'));
+  document.documentElement.addEventListener('mouseleave', () => {
+    dot.classList.add('hidden'); ring.classList.add('hidden');
+  });
+
+  /* Tilt 3D */
+  $$('.tilt').forEach(el => {
+    el.addEventListener('pointermove', e => {
+      const r = el.getBoundingClientRect();
+      const x = (e.clientX - r.left) / r.width;
+      const y = (e.clientY - r.top) / r.height;
+      el.style.setProperty('--rx', ((0.5 - y) * 9).toFixed(2) + 'deg');
+      el.style.setProperty('--ry', ((x - 0.5) * 11).toFixed(2) + 'deg');
+    });
+    el.addEventListener('pointerleave', () => {
+      el.style.setProperty('--rx', '0deg');
+      el.style.setProperty('--ry', '0deg');
+    });
+  });
+
+  /* Botões magnéticos */
+  $$('.magnetic').forEach(el => {
+    el.addEventListener('pointermove', e => {
+      const r = el.getBoundingClientRect();
+      const x = e.clientX - r.left - r.width / 2;
+      const y = e.clientY - r.top - r.height / 2;
+      el.style.translate = `${x * 0.25}px ${y * 0.35}px`;
+    });
+    el.addEventListener('pointerleave', () => { el.style.translate = '0 0'; });
+  });
+}
+
+/* Efeito de onda ao clicar nos botões */
+document.addEventListener('pointerdown', e => {
+  const b = e.target.closest('.btn');
+  if (!b || reduce) return;
+  const r = b.getBoundingClientRect();
+  const d = Math.max(r.width, r.height) * 2;
+  const s = document.createElement('span');
+  s.className = 'ripple';
+  s.style.cssText = `width:${d}px;height:${d}px;left:${e.clientX - r.left - d / 2}px;top:${e.clientY - r.top - d / 2}px`;
+  b.append(s);
+  setTimeout(() => s.remove(), 700);
+});
+
+/* =========================================================
+   PEDIDO PELO WHATSAPP
+   ========================================================= */
+function setRequest(service, brand) {
+  const serviceSelect = document.getElementById('serviceChoice');
+  const brandSelect = document.getElementById('brandChoice');
+  const form = document.getElementById('requestForm');
+
+  if (service) {
+    const option = Array.from(serviceSelect.options).find(o => o.text === service || o.value === service);
+    serviceSelect.value = option ? option.value : 'Outro / ainda não definido';
+  }
+
+  if (brand === 'SkyView') brandSelect.value = 'SkyView — serviços acessíveis';
+  if (brand === 'AeroView') brandSelect.value = 'AeroView — serviços premium';
+
+  document.getElementById('pedido').scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' });
+
+  form.classList.remove('flash');
+  setTimeout(() => form.classList.add('flash'), 650);
+  setTimeout(() => form.classList.remove('flash'), 2100);
+}
+
+// Se o visitante vier de uma tabela de preços, preencher o formulário automaticamente.
+const pedidoParams = new URLSearchParams(window.location.search);
+const marcaPedido = pedidoParams.get('marca');
+const servicoPedido = pedidoParams.get('servico');
+if (marcaPedido || servicoPedido) {
+  window.addEventListener('load', () => {
+    setRequest(servicoPedido || 'Outro / ainda não definido', marcaPedido);
+  });
+}
+
+document.getElementById('requestForm').addEventListener('submit', function (event) {
+  event.preventDefault();
+
+  const brand = document.getElementById('brandChoice').value;
+  const service = document.getElementById('serviceChoice').value;
+  const date = document.getElementById('projectDate').value || 'A combinar';
+  const location = document.getElementById('projectLocation').value.trim() || 'A confirmar';
+  const details = document.getElementById('projectDetails').value.trim();
+
+  const message =
+    `Olá! Gostaria de solicitar uma proposta à SkyView AeroView.\n` +
+    `Marca: ${brand}\n` +
+    `Serviço: ${service}\n` +
+    `Data pretendida: ${date}\n` +
+    `Local: ${location}\n` +
+    `Detalhes: ${details}`;
+
+  window.open('https://wa.me/258878956680?text=' + encodeURIComponent(message), '_blank', 'noopener,noreferrer');
+
+  const btn = document.getElementById('submitBtn');
+  const original = btn.innerHTML;
+  btn.classList.add('sent');
+  btn.innerHTML = 'Pedido preparado no WhatsApp ✓';
+  setTimeout(() => { btn.classList.remove('sent'); btn.innerHTML = original; }, 3000);
+});
+</script>
+
 </body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <link rel="icon" type="image/png" href="logo.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>document.documentElement.classList.add('js');</script>
+
+<title>Preços SkyView | Fotografia e Vídeo Aéreo</title>
+
+<meta name="description" content="Tabela de preços dos serviços SkyView: fotografia aérea, vídeo aéreo e serviços de drone em Maputo e Matola.">
+<meta name="theme-color" content="#060606">
+
+<link rel="icon" type="image/jpeg" href="skyview-cover.jpg?v=2">
+<link rel="apple-touch-icon" href="skyview-cover.jpg?v=2">
+
+<meta property="og:title" content="Tabela de Preços SkyView">
+<meta property="og:description" content="Filmagem com drones, casamentos, fotografia aérea, edição, realidade virtual e apoio ao cameraman em Maputo e Matola.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://afonsopascoal11-gif.github.io/SkyView-AeroView/">
+<meta property="og:image" content="https://afonsopascoal11-gif.github.io/SkyView-AeroView/skyview-cover.jpg?v=2">
+<meta property="og:image:alt" content="SkyView AeroView">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Tabela de Preços SkyView">
+<meta name="twitter:description" content="Filmagens com drones e produção audiovisual em Maputo e Matola.">
+<meta name="twitter:image" content="https://afonsopascoal11-gif.github.io/SkyView-AeroView/skyview-cover.jpg?v=2">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap" rel="stylesheet">
+
+<style>
+/* =========================================================
+   BASE
+   ========================================================= */
+:root {
+  --bg: #060606;
+  --panel: #111;
+  --white: #fff;
+  --muted: #a3a3a3;
+  --blue: #65d9ff;
+  --gold: #c9a66b;
+  --line: #262626;
+  --accent: var(--blue);
+  --ease: cubic-bezier(.16, 1, .3, 1);
+  --ease-io: cubic-bezier(.77, 0, .175, 1);
+  --mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+@property --ang {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+
+body {
+  font-family: Inter, sans-serif;
+  background: var(--bg);
+  color: var(--white);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+body.loading { overflow: hidden; }
+
+::selection { background: var(--blue); color: #061017; }
+
+a { color: inherit; text-decoration: none; }
+button, input, select, textarea { font: inherit; }
+
+.container { width: 90%; max-width: 1180px; margin: auto; position: relative; z-index: 2; }
+
+section { padding: 110px 0; position: relative; overflow: hidden; }
+
+.section-title {
+  font: 700 clamp(32px, 5vw, 52px)/1.15 "Playfair Display", serif;
+  margin: 10px 0 18px;
+}
+
+.section-subtitle { color: var(--muted); max-width: 740px; margin-bottom: 38px; }
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 26px;
+  height: 1px;
+  background: currentColor;
+  transform-origin: left;
+  transition: transform 1s var(--ease) .3s;
+}
+
+.js .eyebrow.reveal:not(.in)::before { transform: scaleX(0); }
+
+.blue { color: var(--blue); }
+.gold { color: var(--gold); }
+
+/* =========================================================
+   BOTÕES
+   ========================================================= */
+.btn {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px 22px;
+  border-radius: 10px;
+  font-weight: 700;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: transform .3s var(--ease), translate .4s var(--ease), box-shadow .4s, border-color .3s, background .3s, color .3s;
+}
+
+.btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(110deg, transparent 30%, rgba(255,255,255,.45) 50%, transparent 70%);
+  transform: translateX(-120%);
+  transition: transform .8s var(--ease);
+}
+
+.btn:hover::after { transform: translateX(120%); }
+.btn:hover { transform: translateY(-2px); }
+
+.btn-blue { background: var(--blue); color: #061017; }
+.btn-blue:hover { box-shadow: 0 10px 40px -8px rgba(101,217,255,.6); }
+
+.btn-gold { background: var(--gold); color: #100d07; }
+.btn-gold:hover { box-shadow: 0 10px 40px -8px rgba(201,166,107,.6); }
+
+.btn-outline { border-color: #3a3a3a; color: white; background: rgba(255,255,255,.02); }
+.btn-outline::after { background: linear-gradient(110deg, transparent 30%, rgba(101,217,255,.18) 50%, transparent 70%); }
+.btn-outline:hover { border-color: var(--blue); }
+
+.btn .arr { display: inline-block; transition: transform .4s var(--ease); }
+.btn:hover .arr { transform: translateX(4px); }
+
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255,255,255,.35);
+  transform: scale(0);
+  animation: ripple .7s var(--ease) forwards;
+  pointer-events: none;
+}
+
+@keyframes ripple { to { transform: scale(1); opacity: 0; } }
+
+/* =========================================================
+   LOADER — DESCOLAGEM
+   ========================================================= */
+.loader { display: none; }
+
+.js .loader {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+.loader-panel {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 50.5%;
+  background:
+    linear-gradient(rgba(101,217,255,.04) 1px, transparent 1px) 0 0/48px 48px,
+    linear-gradient(90deg, rgba(101,217,255,.04) 1px, transparent 1px) 0 0/48px 48px,
+    #050505;
+  transition: transform 1.2s var(--ease-io) .25s;
+}
+
+.loader-panel.top { top: 0; border-bottom: 1px solid rgba(101,217,255,.15); }
+.loader-panel.bottom { bottom: 0; }
+
+.loader.done { pointer-events: none; }
+.loader.done .loader-panel.top { transform: translateY(-101%); }
+.loader.done .loader-panel.bottom { transform: translateY(101%); }
+
+.loader-hud {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  font-family: var(--mono);
+  transition: opacity .5s, transform .8s var(--ease);
+}
+
+.loader.done .loader-hud { opacity: 0; transform: scale(1.3); filter: blur(6px); }
+
+.reticle { width: 170px; height: 170px; margin: 0 auto 26px; display: block; overflow: visible; }
+.reticle circle, .reticle path { fill: none; transform-box: view-box; transform-origin: 100px 100px; }
+.reticle .r1 { stroke: rgba(101,217,255,.55); stroke-width: 1.2; stroke-dasharray: 3 9; animation: spin 8s linear infinite; }
+.reticle .r2 { stroke: var(--blue); stroke-width: 2; stroke-dasharray: 110 40; animation: spin 2.4s linear infinite reverse; }
+.reticle .r3 { stroke: rgba(201,166,107,.6); stroke-width: 1; stroke-dasharray: 60 20; animation: spin 4s linear infinite; }
+.reticle .cross { stroke: rgba(255,255,255,.6); stroke-width: 1.2; }
+.reticle .core { fill: var(--blue); animation: pulse 1.2s ease-in-out infinite; }
+
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes pulse { 50% { opacity: .2; } }
+
+.loader-brand { font-family: Inter, sans-serif; font-weight: 800; letter-spacing: 6px; font-size: 14px; margin-bottom: 18px; }
+
+.loader-alt { font-size: 44px; font-weight: 600; letter-spacing: 2px; line-height: 1; }
+.loader-alt small { font-size: 12px; color: var(--muted); letter-spacing: 3px; margin: 0 8px; }
+
+.loader-bar { width: 220px; height: 2px; background: #1d1d1d; margin: 20px auto 12px; overflow: hidden; }
+.loader-bar i { display: block; height: 100%; background: linear-gradient(90deg, var(--blue), var(--gold)); transform: scaleX(0); transform-origin: left; }
+
+.loader-status { font-size: 11px; letter-spacing: 3px; color: var(--muted); text-transform: uppercase; }
+
+/* =========================================================
+   CURSOR PERSONALIZADO
+   ========================================================= */
+.cursor-dot, .cursor-ring { display: none; }
+
+.has-cursor, .has-cursor a, .has-cursor button { cursor: none; }
+.has-cursor input, .has-cursor textarea, .has-cursor select { cursor: auto; }
+
+.has-cursor .cursor-dot, .has-cursor .cursor-ring {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 300;
+  border-radius: 50%;
+}
+
+.cursor-dot { width: 6px; height: 6px; margin: -3px 0 0 -3px; background: var(--blue); }
+
+.cursor-ring {
+  width: 38px;
+  height: 38px;
+  margin: -19px 0 0 -19px;
+  border: 1px solid rgba(101,217,255,.6);
+  transition: transform .35s var(--ease), border-color .3s, background .3s, opacity .3s;
+}
+
+.cursor-ring.hover { transform: scale(1.7); background: rgba(101,217,255,.08); border-color: var(--blue); }
+.cursor-ring.gold { border-color: var(--gold); }
+.cursor-ring.gold.hover { background: rgba(201,166,107,.1); }
+.cursor-ring.down { transform: scale(.75); }
+.cursor-ring.hidden, .cursor-dot.hidden { opacity: 0; }
+
+/* =========================================================
+   NAVEGAÇÃO
+   ========================================================= */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background: rgba(6,6,6,.55);
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  border-bottom: 1px solid rgba(255,255,255,.06);
+  transition: transform .6s var(--ease), background .4s;
+}
+
+nav.scrolled { background: rgba(6,6,6,.9); }
+nav.hide { transform: translateY(-100%); }
+
+.js nav { transform: translateY(-100%); }
+.js body.loaded nav:not(.hide) { transform: none; transition-delay: .9s; }
+.js body.loaded nav.ready { transition-delay: 0s; }
+
+.nav-content { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+
+.brand { font-weight: 800; letter-spacing: -.5px; display: inline-flex; align-items: center; gap: 6px; }
+
+.brand-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--blue);
+  box-shadow: 0 0 12px var(--blue);
+  animation: pulse 1.6s ease-in-out infinite;
+  margin-right: 4px;
+}
+
+.nav-links { display: flex; gap: 22px; align-items: center; overflow-x: auto; scrollbar-width: none; }
+.nav-links::-webkit-scrollbar { display: none; }
+
+.nav-links a { position: relative; font-size: 13px; color: #b5b5b5; white-space: nowrap; padding: 4px 0; transition: color .3s; }
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: var(--blue);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform .5s var(--ease);
+}
+
+.nav-links a:hover, .nav-links a.active { color: white; }
+.nav-links a:hover::after, .nav-links a.active::after { transform: scaleX(1); transform-origin: left; }
+
+.scroll-progress {
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(90deg, var(--blue), var(--gold));
+  transform: scaleX(0);
+  transform-origin: left;
+  box-shadow: 0 0 10px rgba(101,217,255,.6);
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: 120px 0 90px;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: -8%;
+  background: url("paisagemfpv.jpg") center 45%/cover no-repeat;
+  animation: kenburns 24s ease-in-out infinite alternate;
+  will-change: transform;
+  transition: scale 2.6s var(--ease), filter 2.6s var(--ease);
+}
+
+.js body:not(.loaded) .hero-bg { scale: 1.25; filter: blur(14px) brightness(.4); }
+
+@keyframes kenburns {
+  from { transform: scale(1) translate(0, 0); }
+  to { transform: scale(1.12) translate(-2%, -1.5%); }
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(90deg, rgba(0,0,0,.95) 0%, rgba(0,0,0,.7) 45%, rgba(0,0,0,.35) 100%),
+    linear-gradient(0deg, var(--bg) 0%, transparent 30%);
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: .06;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation: grain 1s steps(4) infinite;
+}
+
+@keyframes grain {
+  25% { transform: translate(-2%, 1%); }
+  50% { transform: translate(1%, -2%); }
+  75% { transform: translate(2%, 2%); }
+}
+
+#heroCanvas { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 1; }
+
+.hero-content { position: relative; z-index: 3; max-width: 780px; will-change: transform, opacity; }
+
+.hero h1 { font: 700 clamp(44px, 8vw, 84px)/1.05 "Playfair Display", serif; margin: 15px 0 24px; }
+
+.hero h1 em, .grad {
+  font-style: italic;
+  background: linear-gradient(90deg, var(--blue), #fff 45%, var(--gold) 70%, var(--blue));
+  background-size: 250% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 7s linear infinite;
+}
+
+@keyframes shimmer { to { background-position: -250% 0; } }
+
+.hero p { color: #d0d0d0; font-size: 17px; max-width: 650px; margin-bottom: 30px; }
+
+.hero-actions, .actions, .contact-buttons { display: flex; gap: 12px; flex-wrap: wrap; }
+
+/* HUD da câmara */
+.hud {
+  position: absolute;
+  top: 92px;
+  left: 24px;
+  right: 24px;
+  bottom: 24px;
+  z-index: 2;
+  pointer-events: none;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  color: rgba(255,255,255,.72);
+  transition: opacity 1.4s ease 1.1s;
+}
+
+.js body:not(.loaded) .hud { opacity: 0; }
+
+.hud-c { position: absolute; width: 26px; height: 26px; border-color: rgba(255,255,255,.55); border-style: solid; border-width: 0; }
+.hud-c.tl { top: 0; left: 0; border-top-width: 1.5px; border-left-width: 1.5px; }
+.hud-c.tr { top: 0; right: 0; border-top-width: 1.5px; border-right-width: 1.5px; }
+.hud-c.bl { bottom: 0; left: 0; border-bottom-width: 1.5px; border-left-width: 1.5px; }
+.hud-c.br { bottom: 0; right: 0; border-bottom-width: 1.5px; border-right-width: 1.5px; }
+
+.hud-row { position: absolute; left: 40px; right: 40px; display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+.hud-top { top: 6px; }
+.hud-bottom { bottom: 4px; }
+
+.rec-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ff3b3b;
+  box-shadow: 0 0 10px #ff3b3b;
+  margin-right: 6px;
+  animation: pulse 1s steps(2) infinite;
+}
+
+.bat { display: inline-block; width: 26px; height: 11px; border: 1px solid rgba(255,255,255,.6); border-radius: 2px; padding: 1px; vertical-align: -1px; margin-left: 6px; position: relative; }
+.bat::after { content: ""; position: absolute; right: -4px; top: 3px; width: 2px; height: 4px; background: rgba(255,255,255,.6); }
+.bat i { display: block; height: 100%; width: 98%; background: var(--blue); transition: width 1s; }
+
+.crosshair {
+  position: absolute;
+  right: 16%;
+  top: 46%;
+  width: 120px;
+  height: 120px;
+  margin: -60px -60px 0 0;
+  border: 1px solid rgba(101,217,255,.35);
+  border-radius: 50%;
+}
+
+.crosshair::before, .crosshair::after { content: ""; position: absolute; background: rgba(101,217,255,.7); }
+.crosshair::before { left: 50%; top: -14px; bottom: -14px; width: 1px; }
+.crosshair::after { top: 50%; left: -14px; right: -14px; height: 1px; }
+
+.crosshair span { position: absolute; inset: 14px; border-radius: 50%; border: 1px dashed rgba(201,166,107,.6); animation: spin 14s linear infinite; }
+
+.crosshair b {
+  position: absolute;
+  left: 50%;
+  top: calc(100% + 18px);
+  transform: translateX(-50%);
+  font-weight: 400;
+  white-space: nowrap;
+  color: var(--blue);
+  font-size: 10px;
+}
+
+.scanline {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: linear-gradient(180deg, transparent, rgba(101,217,255,.06), transparent);
+  animation: scan 6s linear infinite;
+}
+
+@keyframes scan { from { top: -120px; } to { top: 100%; } }
+
+.scroll-cue { display: flex; flex-direction: column; align-items: center; gap: 6px; font-size: 10px; letter-spacing: 3px; }
+.scroll-cue i { width: 1px; height: 34px; background: rgba(255,255,255,.2); position: relative; overflow: hidden; }
+.scroll-cue i::after { content: ""; position: absolute; left: 0; width: 1px; height: 40%; background: var(--blue); animation: drip 1.8s var(--ease-io) infinite; }
+
+@keyframes drip { from { top: -40%; } to { top: 100%; } }
+
+/* Cartões de escolha */
+.choice-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin-top: 34px; }
+
+.choice {
+  position: relative;
+  display: block;
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: rgba(14,14,14,.75);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.choice.aero { --accent: var(--gold); }
+.choice h2 { font-size: 30px; margin: 4px 0; }
+.choice p { font-size: 14px; color: #aaa; }
+.choice .btn { margin-top: 20px; }
+
+/* Redes sociais */
+.hero-social { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-top: 26px; }
+.hero-social-label { width: 100%; font-family: var(--mono); font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #ccc; }
+
+.social-links { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+
+.social-link {
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 14px;
+  border: 1px solid #333;
+  border-radius: 999px;
+  color: #ddd;
+  font-size: 12px;
+  background: rgba(0,0,0,.3);
+  transition: border-color .3s, color .3s, transform .3s var(--ease);
+}
+
+.social-link::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--blue);
+  transform: translateY(101%);
+  transition: transform .45s var(--ease);
+  z-index: -1;
+}
+
+.social-link { isolation: isolate; }
+.social-link:hover { border-color: var(--blue); color: #061017; transform: translateY(-2px); }
+.social-link:hover::before { transform: none; }
+
+/* =========================================================
+   CARTÕES: TILT 3D + SPOTLIGHT
+   ========================================================= */
+.tilt { transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)); transform-style: preserve-3d; }
+.tilt:hover { scale: 1.015; }
+
+.spot { position: relative; isolation: isolate; }
+
+.spot::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  z-index: -1;
+  background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%), color-mix(in srgb, var(--accent) 14%, transparent), transparent 45%);
+  opacity: 0;
+  transition: opacity .4s;
+  pointer-events: none;
+}
+
+.spot::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: radial-gradient(260px circle at var(--mx, 50%) var(--my, 50%), var(--accent), transparent 50%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity .4s;
+  pointer-events: none;
+}
+
+.spot:hover::before, .spot:hover::after { opacity: 1; }
+
+/* =========================================================
+   MARQUEE
+   ========================================================= */
+.marquee {
+  position: relative;
+  z-index: 4;
+  overflow: hidden;
+  border-top: 1px solid #1c1c1c;
+  border-bottom: 1px solid #1c1c1c;
+  background: #080808;
+  padding: 20px 0;
+}
+
+.marquee-skew { will-change: transform; }
+
+.marquee-track { display: flex; width: max-content; animation: marquee 38s linear infinite; }
+.marquee:hover .marquee-track { animation-play-state: paused; }
+
+.marquee-track span {
+  font: 700 clamp(22px, 3.4vw, 40px)/1 "Playfair Display", serif;
+  white-space: nowrap;
+  padding: 0 26px;
+  display: inline-flex;
+  align-items: center;
+  gap: 52px;
+}
+
+.marquee-track span:nth-child(even) { color: transparent; -webkit-text-stroke: 1px rgba(255,255,255,.45); }
+.marquee-track span::after { content: "✦"; font-size: .5em; color: var(--gold); -webkit-text-stroke: 0; }
+.marquee-track span:nth-child(3n)::after { color: var(--blue); }
+
+@keyframes marquee { to { transform: translateX(-50%); } }
+
+/* =========================================================
+   SERVIÇOS
+   ========================================================= */
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+
+.service, .partner {
+  background: linear-gradient(160deg, #141414, #0e0e0e);
+  border: 1px solid #242424;
+  border-radius: 16px;
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+}
+
+.service h3, .partner h3 { font-size: 19px; margin: 8px 0 9px; }
+.service p, .partner p { font-size: 14px; color: #aaa; }
+
+.service-head { display: flex; align-items: center; justify-content: space-between; }
+
+.service .num { font-family: var(--mono); font-size: 11px; letter-spacing: 2px; }
+
+.icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #2c2c2c;
+  background: rgba(101,217,255,.05);
+  color: var(--blue);
+  transition: transform .6s var(--ease), box-shadow .4s, background .4s;
+}
+
+.icon svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+
+.service:hover .icon { transform: rotate(-8deg) scale(1.1) translateZ(30px); box-shadow: 0 0 30px -4px rgba(101,217,255,.5); background: rgba(101,217,255,.12); }
+
+.service .btn { margin-top: auto; align-self: flex-start; font-size: 13px; padding: 10px 14px; }
+.service p { margin-bottom: 20px; }
+
+/* =========================================================
+   SKYVIEW / AEROVIEW
+   ========================================================= */
+.sky-section { background: radial-gradient(ellipse at 100% 0, rgba(65,200,255,.08), transparent 40%), #080a0c; }
+.aero-section { --accent: var(--gold); background: radial-gradient(ellipse at 0 0, rgba(201,166,107,.09), transparent 40%), #0b0a08; }
+
+.brand-section { padding: 150px 0; }
+
+.bg-word {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  z-index: 0;
+  font: 800 clamp(110px, 22vw, 320px)/1 Inter, sans-serif;
+  letter-spacing: -.04em;
+  white-space: nowrap;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(101,217,255,.12);
+  pointer-events: none;
+  user-select: none;
+  will-change: translate;
+}
+
+.aero-section .bg-word { -webkit-text-stroke-color: rgba(201,166,107,.14); }
+
+.orb { position: absolute; border-radius: 50%; filter: blur(70px); opacity: .45; pointer-events: none; z-index: 0; animation: float 14s ease-in-out infinite alternate; }
+.orb.o1 { width: 340px; height: 340px; background: rgba(101,217,255,.25); right: -80px; top: 10%; }
+.orb.o2 { width: 260px; height: 260px; background: rgba(101,217,255,.12); left: 10%; bottom: -100px; animation-duration: 18s; }
+.orb.o3 { width: 360px; height: 360px; background: rgba(201,166,107,.22); left: -100px; top: 5%; }
+.orb.o4 { width: 240px; height: 240px; background: rgba(201,166,107,.12); right: 12%; bottom: -80px; animation-duration: 17s; }
+
+@keyframes float {
+  from { transform: translate(0, 0) scale(1); }
+  to { transform: translate(40px, -50px) scale(1.15); }
+}
+
+/* =========================================================
+   PARCERIAS
+   ========================================================= */
+.partners-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+
+.partner { --accent: var(--gold); }
+.partner .partner-tag { font-family: var(--mono); font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); }
+
+.partner-socials { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; padding-top: 18px; }
+
+.partner-socials a {
+  color: #ddd;
+  background: #1b1b1b;
+  border: 1px solid #333;
+  border-radius: 999px;
+  padding: 7px 12px;
+  font-size: 11px;
+  transition: .3s var(--ease);
+}
+
+.partner-socials a:hover { color: #080808; background: var(--gold); border-color: var(--gold); transform: translateY(-2px); }
+
+/* =========================================================
+   PROCESSO
+   ========================================================= */
+.process-grid { position: relative; display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; padding-top: 4px; }
+
+.process-line { position: absolute; top: 0; left: 0; right: 0; height: 2px; background: #262626; }
+.process-line i { position: absolute; inset: 0; background: linear-gradient(90deg, var(--blue), var(--gold)); transform: scaleX(0); transform-origin: left; box-shadow: 0 0 12px rgba(101,217,255,.5); }
+
+.drone {
+  position: absolute;
+  top: -44px;
+  left: 0;
+  width: 44px;
+  height: 44px;
+  margin-left: -22px;
+  color: var(--blue);
+  filter: drop-shadow(0 0 10px rgba(101,217,255,.5));
+  animation: hover 2.2s ease-in-out infinite;
+}
+
+@keyframes hover { 50% { transform: translateY(-5px) rotate(-3deg); } }
+
+.drone svg { width: 100%; height: 100%; overflow: visible; }
+.drone .rotor { transform-box: fill-box; transform-origin: center; animation: spin .18s linear infinite; }
+.drone .led { animation: pulse .8s steps(2) infinite; }
+
+.process-item { position: relative; padding-top: 32px; }
+
+.process-item .dot {
+  position: absolute;
+  top: -6px;
+  left: 0;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #0d0d0d;
+  border: 2px solid #3a3a3a;
+  transition: .5s var(--ease);
+}
+
+.process-item.active .dot { border-color: var(--blue); background: var(--blue); box-shadow: 0 0 0 6px rgba(101,217,255,.15), 0 0 20px var(--blue); }
+
+.process-item span { font-family: var(--mono); color: var(--blue); font-size: 12px; }
+.process-item h3 { margin: 9px 0; transition: color .4s; }
+.process-item p { font-size: 14px; color: #aaa; }
+
+/* =========================================================
+   PEDIDO
+   ========================================================= */
+.request-section { background: radial-gradient(ellipse at center, rgba(101,217,255,.08), transparent 55%), #070707; }
+
+.request-layout { display: grid; grid-template-columns: .8fr 1.2fr; gap: 40px; align-items: start; }
+
+.request-card {
+  position: relative;
+  background: #101010;
+  border: 1px solid #2a2a2a;
+  border-radius: 18px;
+  padding: 28px;
+  transition: border-color .4s, box-shadow .5s;
+}
+
+.request-card:focus-within { border-color: rgba(101,217,255,.4); box-shadow: 0 30px 80px -30px rgba(101,217,255,.25); }
+
+.request-card.flash { animation: flash 1.4s var(--ease); }
+
+@keyframes flash {
+  0% { box-shadow: 0 0 0 0 rgba(101,217,255,.6); border-color: var(--blue); }
+  100% { box-shadow: 0 0 0 26px rgba(101,217,255,0); }
+}
+
+.request-card label { display: block; font-size: 13px; margin: 14px 0 6px; color: #ddd; }
+
+.request-card input,
+.request-card select,
+.request-card textarea {
+  width: 100%;
+  background: #080808;
+  border: 1px solid #333;
+  color: white;
+  border-radius: 9px;
+  padding: 12px 13px;
+  transition: border-color .3s, box-shadow .3s, background .3s;
+}
+
+.request-card input:focus,
+.request-card select:focus,
+.request-card textarea:focus { outline: none; border-color: var(--blue); background: #0a0d0f; box-shadow: 0 0 0 4px rgba(101,217,255,.12); }
+
+.request-card textarea { min-height: 100px; resize: vertical; }
+.request-card .btn { width: 100%; margin-top: 20px; }
+.request-card .btn.sent { background: #3ddc97; }
+
+.hint { font-size: 12px; color: #888; margin-top: 10px; }
+
+/* =========================================================
+   SOBRE
+   ========================================================= */
+.about { background: #0b0b0b; }
+
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+.about p { color: #aaa; margin-bottom: 14px; }
+
+.about-card { position: relative; background: #111; border: 1px solid #262626; border-radius: 18px; padding: 34px; isolation: isolate; }
+
+.about-card::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: 19px;
+  padding: 1.5px;
+  background: conic-gradient(from var(--ang), transparent 0 55%, var(--blue) 72%, var(--gold) 86%, transparent 100%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: ang 5s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes ang { to { --ang: 360deg; } }
+
+.about-card h3 { font: 700 30px/1.2 "Playfair Display", serif; margin-bottom: 14px; }
+
+/* =========================================================
+   CONTACTO
+   ========================================================= */
+.contact { background: #090909; text-align: center; padding: 140px 0; }
+.contact .eyebrow { justify-content: center; }
+.contact p { color: #aaa; margin: 12px 0 24px; }
+.contact-buttons { justify-content: center; }
+.contact-links a { transition: color .3s; }
+.contact-links a:hover { color: var(--blue); }
+
+.radar { position: absolute; left: 50%; top: 50%; width: 0; height: 0; z-index: 0; pointer-events: none; }
+
+.radar span {
+  position: absolute;
+  left: -300px;
+  top: -300px;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  border: 1px solid rgba(101,217,255,.25);
+  animation: radar 6s ease-out infinite;
+  opacity: 0;
+}
+
+
+
+.radar span:nth-child(2) { animation-delay: 2s; }
+.radar span:nth-child(3) { animation-delay: 4s; border-color: rgba(201,166,107,.25); }
+
+@keyframes radar {
+  0% { transform: scale(.1); opacity: .9; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+
+/* =========================================================
+   RODAPÉ
+   ========================================================= */
+footer { border-top: 1px solid #1f1f1f; padding: 30px 0; color: #777; font-size: 12px; }
+
+.footer-content { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+.footer-brand { font-size: 15px; font-weight: 800; color: white; }
+.footer-social { display: flex; flex-direction: column; gap: 10px; }
+.footer-social strong { color: #ddd; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; }
+.footer-contact { display: flex; flex-direction: column; gap: 5px; align-items: flex-end; }
+.footer-phone { color: #aaa; font-size: 13px; }
+.footer-phone:hover { color: var(--blue); }
+
+/* Voltar ao topo */
+.to-top {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 40;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: rgba(10,10,10,.85);
+  backdrop-filter: blur(10px);
+  border: 1px solid #2a2a2a;
+  opacity: 0;
+  transform: translateY(20px) scale(.8);
+  pointer-events: none;
+  transition: .5s var(--ease);
+}
+
+.to-top.show { opacity: 1; transform: none; pointer-events: auto; }
+.to-top:hover { border-color: var(--blue); }
+.to-top svg { position: absolute; inset: -1px; width: 52px; height: 52px; transform: rotate(-90deg); }
+.to-top circle { fill: none; stroke: var(--blue); stroke-width: 2; stroke-dasharray: 150.8; stroke-dashoffset: 150.8; }
+.to-top b { font-size: 16px; transition: transform .4s var(--ease); }
+.to-top:hover b { transform: translateY(-3px); }
+
+/* =========================================================
+   ANIMAÇÕES DE ENTRADA
+   ========================================================= */
+.reveal {
+  transition:
+    opacity 1s var(--ease) var(--d, 0s),
+    translate 1.2s var(--ease) var(--d, 0s),
+    filter 1s var(--ease) var(--d, 0s),
+    transform .35s var(--ease),
+    scale .5s var(--ease),
+    border-color .3s,
+    box-shadow .4s;
+}
+
+.js .reveal:not(.in) { opacity: 0; translate: 0 50px; filter: blur(10px); }
+
+/* Texto palavra a palavra */
+.w { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: .12em; margin-bottom: -.12em; }
+.wi { display: inline-block; transition: transform 1.3s var(--ease) calc(var(--i) * .06s + var(--d, 0s)); }
+.js [data-split]:not(.in) .wi { transform: translateY(115%) rotate(7deg); }
+.hero h1 { --d: .25s; }
+
+/* =========================================================
+   RESPONSIVO
+   ========================================================= */
+@media (max-width: 1000px) {
+  .crosshair, .hud-hide-sm { display: none; }
+}
+
+@media (max-width: 850px) {
+  .nav-content { align-items: flex-start; flex-direction: column; padding: 12px 0; gap: 8px; min-height: 0; }
+  .nav-links { width: 100%; padding-bottom: 4px; }
+  .hero { padding-top: 140px; }
+  .hud { top: 112px; }
+  .services-grid, .partners-grid { grid-template-columns: repeat(2, 1fr); }
+  .process-grid { grid-template-columns: repeat(2, 1fr); row-gap: 40px; }
+  .process-line, .drone { display: none; }
+  .process-item { border-top: 1px solid #333; padding-top: 24px; }
+  .process-item .dot { top: -7px; }
+  .request-layout { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+  section { padding: 76px 0; }
+  .brand-section { padding: 100px 0; }
+  .hero { min-height: 100svh; }
+  .hero-bg { background-position: 58% center; }
+  .hero p { font-size: 15px; }
+  .hud { left: 12px; right: 12px; bottom: 12px; font-size: 9px; }
+  .hud-row { left: 30px; right: 30px; }
+  .scroll-cue { display: none; }
+  .choice-grid, .services-grid, .partners-grid, .process-grid, .about-grid { grid-template-columns: 1fr; }
+  .choice { padding: 23px; }
+  .footer-content { align-items: flex-start; flex-direction: column; }
+  .footer-contact { align-items: flex-start; }
+  .radar span { left: -180px; top: -180px; width: 360px; height: 360px; }
+  .to-top { right: 14px; bottom: 14px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; transition-delay: 0s !important; }
+  .js .reveal:not(.in) { opacity: 1; translate: none; filter: none; }
+  .js [data-split]:not(.in) .wi { transform: none; }
+}
+
+/* =========================================================
+   TABELAS DE PREÇOS — SKYVIEW / AEROVIEW
+   ========================================================= */
+.pricing-section { padding: 100px 0; background: #080808; border-top: 1px solid #202020; }
+.pricing-section.sky-pricing { --price-accent: var(--blue); background: radial-gradient(ellipse at 100% 0, rgba(101,217,255,.08), transparent 42%), #080a0c; }
+.pricing-section.aero-pricing { --price-accent: var(--gold); background: radial-gradient(ellipse at 0 0, rgba(201,166,107,.09), transparent 42%), #0b0a08; }
+.pricing-section[hidden] { display: none !important; }
+.price-group { margin: 34px 0; }
+.price-group h3 { font-size: 22px; margin-bottom: 16px; color: var(--price-accent); }
+.price-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.price-card { border: 1px solid #2b2b2b; background: rgba(16,16,16,.82); border-radius: 13px; padding: 20px; }
+.price-card h4 { font-size: 16px; line-height: 1.45; margin-bottom: 8px; }
+.price-card p { color: #aaa; font-size: 13px; margin-bottom: 12px; }
+.price-value { color: var(--price-accent); font-size: 21px; font-weight: 800; letter-spacing: -.4px; }
+.price-notes { color: #aaa; font-size: 13px; margin: 16px 0; }
+.price-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
+.price-table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+.price-table th, .price-table td { text-align: left; padding: 13px 12px; border-bottom: 1px solid #292929; vertical-align: top; }
+.price-table th { color: var(--price-accent); font-size: 12px; text-transform: uppercase; letter-spacing: 1px; }
+.price-table td { font-size: 14px; color: #ddd; }
+.price-table td:last-child { white-space: nowrap; font-weight: 800; color: var(--price-accent); }
+.price-table-wrap { overflow-x: auto; border: 1px solid #292929; border-radius: 12px; }
+.price-back { margin-bottom: 24px; }
+.pricing-section .section-title { color: var(--price-accent); }
+@media (max-width: 650px) {
+  .price-grid { grid-template-columns: 1fr; }
+  .price-table { min-width: 560px; }
+  .pricing-section { padding: 75px 0; }
+}
+
+</style>
+
+<style>
+.pricing-page-top{max-width:1180px;margin:0 auto;padding:28px 22px 0;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.pricing-page-brand{font-weight:800;letter-spacing:.08em;text-decoration:none;color:#65d9ff}
+.pricing-page-home{text-decoration:none;color:inherit;border:1px solid rgba(255,255,255,.24);padding:10px 15px;border-radius:999px;font-size:.9rem}
+.pricing-section{padding-top:28px;min-height:75vh}
+</style>
+
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <link rel="icon" type="image/png" href="logo.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>document.documentElement.classList.add('js');</script>
+
+<title>Preços AeroView | Produção Audiovisual Premium</title>
+
+<meta name="description" content="Tabela de preços AeroView para filmagens, eventos e produção audiovisual premium em Maputo e Matola.">
+<meta name="theme-color" content="#060606">
+
+<link rel="icon" type="image/jpeg" href="skyview-cover.jpg?v=2">
+<link rel="apple-touch-icon" href="skyview-cover.jpg?v=2">
+
+<meta property="og:title" content="Tabela de Preços AeroView">
+<meta property="og:description" content="Filmagem com drones, casamentos, fotografia aérea, edição, realidade virtual e apoio ao cameraman em Maputo e Matola.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://afonsopascoal11-gif.github.io/SkyView-AeroView/">
+<meta property="og:image" content="https://afonsopascoal11-gif.github.io/SkyView-AeroView/skyview-cover.jpg?v=2">
+<meta property="og:image:alt" content="SkyView AeroView">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Tabela de Preços AeroView">
+<meta name="twitter:description" content="Filmagens com drones e produção audiovisual em Maputo e Matola.">
+<meta name="twitter:image" content="https://afonsopascoal11-gif.github.io/SkyView-AeroView/skyview-cover.jpg?v=2">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap" rel="stylesheet">
+
+<style>
+/* =========================================================
+   BASE
+   ========================================================= */
+:root {
+  --bg: #060606;
+  --panel: #111;
+  --white: #fff;
+  --muted: #a3a3a3;
+  --blue: #65d9ff;
+  --gold: #c9a66b;
+  --line: #262626;
+  --accent: var(--blue);
+  --ease: cubic-bezier(.16, 1, .3, 1);
+  --ease-io: cubic-bezier(.77, 0, .175, 1);
+  --mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+@property --ang {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+
+body {
+  font-family: Inter, sans-serif;
+  background: var(--bg);
+  color: var(--white);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+body.loading { overflow: hidden; }
+
+::selection { background: var(--blue); color: #061017; }
+
+a { color: inherit; text-decoration: none; }
+button, input, select, textarea { font: inherit; }
+
+.container { width: 90%; max-width: 1180px; margin: auto; position: relative; z-index: 2; }
+
+section { padding: 110px 0; position: relative; overflow: hidden; }
+
+.section-title {
+  font: 700 clamp(32px, 5vw, 52px)/1.15 "Playfair Display", serif;
+  margin: 10px 0 18px;
+}
+
+.section-subtitle { color: var(--muted); max-width: 740px; margin-bottom: 38px; }
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 26px;
+  height: 1px;
+  background: currentColor;
+  transform-origin: left;
+  transition: transform 1s var(--ease) .3s;
+}
+
+.js .eyebrow.reveal:not(.in)::before { transform: scaleX(0); }
+
+.blue { color: var(--blue); }
+.gold { color: var(--gold); }
+
+/* =========================================================
+   BOTÕES
+   ========================================================= */
+.btn {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px 22px;
+  border-radius: 10px;
+  font-weight: 700;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: transform .3s var(--ease), translate .4s var(--ease), box-shadow .4s, border-color .3s, background .3s, color .3s;
+}
+
+.btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(110deg, transparent 30%, rgba(255,255,255,.45) 50%, transparent 70%);
+  transform: translateX(-120%);
+  transition: transform .8s var(--ease);
+}
+
+.btn:hover::after { transform: translateX(120%); }
+.btn:hover { transform: translateY(-2px); }
+
+.btn-blue { background: var(--blue); color: #061017; }
+.btn-blue:hover { box-shadow: 0 10px 40px -8px rgba(101,217,255,.6); }
+
+.btn-gold { background: var(--gold); color: #100d07; }
+.btn-gold:hover { box-shadow: 0 10px 40px -8px rgba(201,166,107,.6); }
+
+.btn-outline { border-color: #3a3a3a; color: white; background: rgba(255,255,255,.02); }
+.btn-outline::after { background: linear-gradient(110deg, transparent 30%, rgba(101,217,255,.18) 50%, transparent 70%); }
+.btn-outline:hover { border-color: var(--blue); }
+
+.btn .arr { display: inline-block; transition: transform .4s var(--ease); }
+.btn:hover .arr { transform: translateX(4px); }
+
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255,255,255,.35);
+  transform: scale(0);
+  animation: ripple .7s var(--ease) forwards;
+  pointer-events: none;
+}
+
+@keyframes ripple { to { transform: scale(1); opacity: 0; } }
+
+/* =========================================================
+   LOADER — DESCOLAGEM
+   ========================================================= */
+.loader { display: none; }
+
+.js .loader {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+.loader-panel {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 50.5%;
+  background:
+    linear-gradient(rgba(101,217,255,.04) 1px, transparent 1px) 0 0/48px 48px,
+    linear-gradient(90deg, rgba(101,217,255,.04) 1px, transparent 1px) 0 0/48px 48px,
+    #050505;
+  transition: transform 1.2s var(--ease-io) .25s;
+}
+
+.loader-panel.top { top: 0; border-bottom: 1px solid rgba(101,217,255,.15); }
+.loader-panel.bottom { bottom: 0; }
+
+.loader.done { pointer-events: none; }
+.loader.done .loader-panel.top { transform: translateY(-101%); }
+.loader.done .loader-panel.bottom { transform: translateY(101%); }
+
+.loader-hud {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  font-family: var(--mono);
+  transition: opacity .5s, transform .8s var(--ease);
+}
+
+.loader.done .loader-hud { opacity: 0; transform: scale(1.3); filter: blur(6px); }
+
+.reticle { width: 170px; height: 170px; margin: 0 auto 26px; display: block; overflow: visible; }
+.reticle circle, .reticle path { fill: none; transform-box: view-box; transform-origin: 100px 100px; }
+.reticle .r1 { stroke: rgba(101,217,255,.55); stroke-width: 1.2; stroke-dasharray: 3 9; animation: spin 8s linear infinite; }
+.reticle .r2 { stroke: var(--blue); stroke-width: 2; stroke-dasharray: 110 40; animation: spin 2.4s linear infinite reverse; }
+.reticle .r3 { stroke: rgba(201,166,107,.6); stroke-width: 1; stroke-dasharray: 60 20; animation: spin 4s linear infinite; }
+.reticle .cross { stroke: rgba(255,255,255,.6); stroke-width: 1.2; }
+.reticle .core { fill: var(--blue); animation: pulse 1.2s ease-in-out infinite; }
+
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes pulse { 50% { opacity: .2; } }
+
+.loader-brand { font-family: Inter, sans-serif; font-weight: 800; letter-spacing: 6px; font-size: 14px; margin-bottom: 18px; }
+
+.loader-alt { font-size: 44px; font-weight: 600; letter-spacing: 2px; line-height: 1; }
+.loader-alt small { font-size: 12px; color: var(--muted); letter-spacing: 3px; margin: 0 8px; }
+
+.loader-bar { width: 220px; height: 2px; background: #1d1d1d; margin: 20px auto 12px; overflow: hidden; }
+.loader-bar i { display: block; height: 100%; background: linear-gradient(90deg, var(--blue), var(--gold)); transform: scaleX(0); transform-origin: left; }
+
+.loader-status { font-size: 11px; letter-spacing: 3px; color: var(--muted); text-transform: uppercase; }
+
+/* =========================================================
+   CURSOR PERSONALIZADO
+   ========================================================= */
+.cursor-dot, .cursor-ring { display: none; }
+
+.has-cursor, .has-cursor a, .has-cursor button { cursor: none; }
+.has-cursor input, .has-cursor textarea, .has-cursor select { cursor: auto; }
+
+.has-cursor .cursor-dot, .has-cursor .cursor-ring {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 300;
+  border-radius: 50%;
+}
+
+.cursor-dot { width: 6px; height: 6px; margin: -3px 0 0 -3px; background: var(--blue); }
+
+.cursor-ring {
+  width: 38px;
+  height: 38px;
+  margin: -19px 0 0 -19px;
+  border: 1px solid rgba(101,217,255,.6);
+  transition: transform .35s var(--ease), border-color .3s, background .3s, opacity .3s;
+}
+
+.cursor-ring.hover { transform: scale(1.7); background: rgba(101,217,255,.08); border-color: var(--blue); }
+.cursor-ring.gold { border-color: var(--gold); }
+.cursor-ring.gold.hover { background: rgba(201,166,107,.1); }
+.cursor-ring.down { transform: scale(.75); }
+.cursor-ring.hidden, .cursor-dot.hidden { opacity: 0; }
+
+/* =========================================================
+   NAVEGAÇÃO
+   ========================================================= */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background: rgba(6,6,6,.55);
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  border-bottom: 1px solid rgba(255,255,255,.06);
+  transition: transform .6s var(--ease), background .4s;
+}
+
+nav.scrolled { background: rgba(6,6,6,.9); }
+nav.hide { transform: translateY(-100%); }
+
+.js nav { transform: translateY(-100%); }
+.js body.loaded nav:not(.hide) { transform: none; transition-delay: .9s; }
+.js body.loaded nav.ready { transition-delay: 0s; }
+
+.nav-content { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+
+.brand { font-weight: 800; letter-spacing: -.5px; display: inline-flex; align-items: center; gap: 6px; }
+
+.brand-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--blue);
+  box-shadow: 0 0 12px var(--blue);
+  animation: pulse 1.6s ease-in-out infinite;
+  margin-right: 4px;
+}
+
+.nav-links { display: flex; gap: 22px; align-items: center; overflow-x: auto; scrollbar-width: none; }
+.nav-links::-webkit-scrollbar { display: none; }
+
+.nav-links a { position: relative; font-size: 13px; color: #b5b5b5; white-space: nowrap; padding: 4px 0; transition: color .3s; }
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: var(--blue);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform .5s var(--ease);
+}
+
+.nav-links a:hover, .nav-links a.active { color: white; }
+.nav-links a:hover::after, .nav-links a.active::after { transform: scaleX(1); transform-origin: left; }
+
+.scroll-progress {
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(90deg, var(--blue), var(--gold));
+  transform: scaleX(0);
+  transform-origin: left;
+  box-shadow: 0 0 10px rgba(101,217,255,.6);
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: 120px 0 90px;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: -8%;
+  background: url("paisagemfpv.jpg") center 45%/cover no-repeat;
+  animation: kenburns 24s ease-in-out infinite alternate;
+  will-change: transform;
+  transition: scale 2.6s var(--ease), filter 2.6s var(--ease);
+}
+
+.js body:not(.loaded) .hero-bg { scale: 1.25; filter: blur(14px) brightness(.4); }
+
+@keyframes kenburns {
+  from { transform: scale(1) translate(0, 0); }
+  to { transform: scale(1.12) translate(-2%, -1.5%); }
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(90deg, rgba(0,0,0,.95) 0%, rgba(0,0,0,.7) 45%, rgba(0,0,0,.35) 100%),
+    linear-gradient(0deg, var(--bg) 0%, transparent 30%);
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: .06;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation: grain 1s steps(4) infinite;
+}
+
+@keyframes grain {
+  25% { transform: translate(-2%, 1%); }
+  50% { transform: translate(1%, -2%); }
+  75% { transform: translate(2%, 2%); }
+}
+
+#heroCanvas { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 1; }
+
+.hero-content { position: relative; z-index: 3; max-width: 780px; will-change: transform, opacity; }
+
+.hero h1 { font: 700 clamp(44px, 8vw, 84px)/1.05 "Playfair Display", serif; margin: 15px 0 24px; }
+
+.hero h1 em, .grad {
+  font-style: italic;
+  background: linear-gradient(90deg, var(--blue), #fff 45%, var(--gold) 70%, var(--blue));
+  background-size: 250% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 7s linear infinite;
+}
+
+@keyframes shimmer { to { background-position: -250% 0; } }
+
+.hero p { color: #d0d0d0; font-size: 17px; max-width: 650px; margin-bottom: 30px; }
+
+.hero-actions, .actions, .contact-buttons { display: flex; gap: 12px; flex-wrap: wrap; }
+
+/* HUD da câmara */
+.hud {
+  position: absolute;
+  top: 92px;
+  left: 24px;
+  right: 24px;
+  bottom: 24px;
+  z-index: 2;
+  pointer-events: none;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  color: rgba(255,255,255,.72);
+  transition: opacity 1.4s ease 1.1s;
+}
+
+.js body:not(.loaded) .hud { opacity: 0; }
+
+.hud-c { position: absolute; width: 26px; height: 26px; border-color: rgba(255,255,255,.55); border-style: solid; border-width: 0; }
+.hud-c.tl { top: 0; left: 0; border-top-width: 1.5px; border-left-width: 1.5px; }
+.hud-c.tr { top: 0; right: 0; border-top-width: 1.5px; border-right-width: 1.5px; }
+.hud-c.bl { bottom: 0; left: 0; border-bottom-width: 1.5px; border-left-width: 1.5px; }
+.hud-c.br { bottom: 0; right: 0; border-bottom-width: 1.5px; border-right-width: 1.5px; }
+
+.hud-row { position: absolute; left: 40px; right: 40px; display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+.hud-top { top: 6px; }
+.hud-bottom { bottom: 4px; }
+
+.rec-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ff3b3b;
+  box-shadow: 0 0 10px #ff3b3b;
+  margin-right: 6px;
+  animation: pulse 1s steps(2) infinite;
+}
+
+.bat { display: inline-block; width: 26px; height: 11px; border: 1px solid rgba(255,255,255,.6); border-radius: 2px; padding: 1px; vertical-align: -1px; margin-left: 6px; position: relative; }
+.bat::after { content: ""; position: absolute; right: -4px; top: 3px; width: 2px; height: 4px; background: rgba(255,255,255,.6); }
+.bat i { display: block; height: 100%; width: 98%; background: var(--blue); transition: width 1s; }
+
+.crosshair {
+  position: absolute;
+  right: 16%;
+  top: 46%;
+  width: 120px;
+  height: 120px;
+  margin: -60px -60px 0 0;
+  border: 1px solid rgba(101,217,255,.35);
+  border-radius: 50%;
+}
+
+.crosshair::before, .crosshair::after { content: ""; position: absolute; background: rgba(101,217,255,.7); }
+.crosshair::before { left: 50%; top: -14px; bottom: -14px; width: 1px; }
+.crosshair::after { top: 50%; left: -14px; right: -14px; height: 1px; }
+
+.crosshair span { position: absolute; inset: 14px; border-radius: 50%; border: 1px dashed rgba(201,166,107,.6); animation: spin 14s linear infinite; }
+
+.crosshair b {
+  position: absolute;
+  left: 50%;
+  top: calc(100% + 18px);
+  transform: translateX(-50%);
+  font-weight: 400;
+  white-space: nowrap;
+  color: var(--blue);
+  font-size: 10px;
+}
+
+.scanline {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: linear-gradient(180deg, transparent, rgba(101,217,255,.06), transparent);
+  animation: scan 6s linear infinite;
+}
+
+@keyframes scan { from { top: -120px; } to { top: 100%; } }
+
+.scroll-cue { display: flex; flex-direction: column; align-items: center; gap: 6px; font-size: 10px; letter-spacing: 3px; }
+.scroll-cue i { width: 1px; height: 34px; background: rgba(255,255,255,.2); position: relative; overflow: hidden; }
+.scroll-cue i::after { content: ""; position: absolute; left: 0; width: 1px; height: 40%; background: var(--blue); animation: drip 1.8s var(--ease-io) infinite; }
+
+@keyframes drip { from { top: -40%; } to { top: 100%; } }
+
+/* Cartões de escolha */
+.choice-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin-top: 34px; }
+
+.choice {
+  position: relative;
+  display: block;
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: rgba(14,14,14,.75);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.choice.aero { --accent: var(--gold); }
+.choice h2 { font-size: 30px; margin: 4px 0; }
+.choice p { font-size: 14px; color: #aaa; }
+.choice .btn { margin-top: 20px; }
+
+/* Redes sociais */
+.hero-social { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-top: 26px; }
+.hero-social-label { width: 100%; font-family: var(--mono); font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #ccc; }
+
+.social-links { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+
+.social-link {
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 14px;
+  border: 1px solid #333;
+  border-radius: 999px;
+  color: #ddd;
+  font-size: 12px;
+  background: rgba(0,0,0,.3);
+  transition: border-color .3s, color .3s, transform .3s var(--ease);
+}
+
+.social-link::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--blue);
+  transform: translateY(101%);
+  transition: transform .45s var(--ease);
+  z-index: -1;
+}
+
+.social-link { isolation: isolate; }
+.social-link:hover { border-color: var(--blue); color: #061017; transform: translateY(-2px); }
+.social-link:hover::before { transform: none; }
+
+/* =========================================================
+   CARTÕES: TILT 3D + SPOTLIGHT
+   ========================================================= */
+.tilt { transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)); transform-style: preserve-3d; }
+.tilt:hover { scale: 1.015; }
+
+.spot { position: relative; isolation: isolate; }
+
+.spot::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  z-index: -1;
+  background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%), color-mix(in srgb, var(--accent) 14%, transparent), transparent 45%);
+  opacity: 0;
+  transition: opacity .4s;
+  pointer-events: none;
+}
+
+.spot::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: radial-gradient(260px circle at var(--mx, 50%) var(--my, 50%), var(--accent), transparent 50%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity .4s;
+  pointer-events: none;
+}
+
+.spot:hover::before, .spot:hover::after { opacity: 1; }
+
+/* =========================================================
+   MARQUEE
+   ========================================================= */
+.marquee {
+  position: relative;
+  z-index: 4;
+  overflow: hidden;
+  border-top: 1px solid #1c1c1c;
+  border-bottom: 1px solid #1c1c1c;
+  background: #080808;
+  padding: 20px 0;
+}
+
+.marquee-skew { will-change: transform; }
+
+.marquee-track { display: flex; width: max-content; animation: marquee 38s linear infinite; }
+.marquee:hover .marquee-track { animation-play-state: paused; }
+
+.marquee-track span {
+  font: 700 clamp(22px, 3.4vw, 40px)/1 "Playfair Display", serif;
+  white-space: nowrap;
+  padding: 0 26px;
+  display: inline-flex;
+  align-items: center;
+  gap: 52px;
+}
+
+.marquee-track span:nth-child(even) { color: transparent; -webkit-text-stroke: 1px rgba(255,255,255,.45); }
+.marquee-track span::after { content: "✦"; font-size: .5em; color: var(--gold); -webkit-text-stroke: 0; }
+.marquee-track span:nth-child(3n)::after { color: var(--blue); }
+
+@keyframes marquee { to { transform: translateX(-50%); } }
+
+/* =========================================================
+   SERVIÇOS
+   ========================================================= */
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+
+.service, .partner {
+  background: linear-gradient(160deg, #141414, #0e0e0e);
+  border: 1px solid #242424;
+  border-radius: 16px;
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+}
+
+.service h3, .partner h3 { font-size: 19px; margin: 8px 0 9px; }
+.service p, .partner p { font-size: 14px; color: #aaa; }
+
+.service-head { display: flex; align-items: center; justify-content: space-between; }
+
+.service .num { font-family: var(--mono); font-size: 11px; letter-spacing: 2px; }
+
+.icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #2c2c2c;
+  background: rgba(101,217,255,.05);
+  color: var(--blue);
+  transition: transform .6s var(--ease), box-shadow .4s, background .4s;
+}
+
+.icon svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+
+.service:hover .icon { transform: rotate(-8deg) scale(1.1) translateZ(30px); box-shadow: 0 0 30px -4px rgba(101,217,255,.5); background: rgba(101,217,255,.12); }
+
+.service .btn { margin-top: auto; align-self: flex-start; font-size: 13px; padding: 10px 14px; }
+.service p { margin-bottom: 20px; }
+
+/* =========================================================
+   SKYVIEW / AEROVIEW
+   ========================================================= */
+.sky-section { background: radial-gradient(ellipse at 100% 0, rgba(65,200,255,.08), transparent 40%), #080a0c; }
+.aero-section { --accent: var(--gold); background: radial-gradient(ellipse at 0 0, rgba(201,166,107,.09), transparent 40%), #0b0a08; }
+
+.brand-section { padding: 150px 0; }
+
+.bg-word {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  z-index: 0;
+  font: 800 clamp(110px, 22vw, 320px)/1 Inter, sans-serif;
+  letter-spacing: -.04em;
+  white-space: nowrap;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(101,217,255,.12);
+  pointer-events: none;
+  user-select: none;
+  will-change: translate;
+}
+
+.aero-section .bg-word { -webkit-text-stroke-color: rgba(201,166,107,.14); }
+
+.orb { position: absolute; border-radius: 50%; filter: blur(70px); opacity: .45; pointer-events: none; z-index: 0; animation: float 14s ease-in-out infinite alternate; }
+.orb.o1 { width: 340px; height: 340px; background: rgba(101,217,255,.25); right: -80px; top: 10%; }
+.orb.o2 { width: 260px; height: 260px; background: rgba(101,217,255,.12); left: 10%; bottom: -100px; animation-duration: 18s; }
+.orb.o3 { width: 360px; height: 360px; background: rgba(201,166,107,.22); left: -100px; top: 5%; }
+.orb.o4 { width: 240px; height: 240px; background: rgba(201,166,107,.12); right: 12%; bottom: -80px; animation-duration: 17s; }
+
+@keyframes float {
+  from { transform: translate(0, 0) scale(1); }
+  to { transform: translate(40px, -50px) scale(1.15); }
+}
+
+/* =========================================================
+   PARCERIAS
+   ========================================================= */
+.partners-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+
+.partner { --accent: var(--gold); }
+.partner .partner-tag { font-family: var(--mono); font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); }
+
+.partner-socials { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; padding-top: 18px; }
+
+.partner-socials a {
+  color: #ddd;
+  background: #1b1b1b;
+  border: 1px solid #333;
+  border-radius: 999px;
+  padding: 7px 12px;
+  font-size: 11px;
+  transition: .3s var(--ease);
+}
+
+.partner-socials a:hover { color: #080808; background: var(--gold); border-color: var(--gold); transform: translateY(-2px); }
+
+/* =========================================================
+   PROCESSO
+   ========================================================= */
+.process-grid { position: relative; display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; padding-top: 4px; }
+
+.process-line { position: absolute; top: 0; left: 0; right: 0; height: 2px; background: #262626; }
+.process-line i { position: absolute; inset: 0; background: linear-gradient(90deg, var(--blue), var(--gold)); transform: scaleX(0); transform-origin: left; box-shadow: 0 0 12px rgba(101,217,255,.5); }
+
+.drone {
+  position: absolute;
+  top: -44px;
+  left: 0;
+  width: 44px;
+  height: 44px;
+  margin-left: -22px;
+  color: var(--blue);
+  filter: drop-shadow(0 0 10px rgba(101,217,255,.5));
+  animation: hover 2.2s ease-in-out infinite;
+}
+
+@keyframes hover { 50% { transform: translateY(-5px) rotate(-3deg); } }
+
+.drone svg { width: 100%; height: 100%; overflow: visible; }
+.drone .rotor { transform-box: fill-box; transform-origin: center; animation: spin .18s linear infinite; }
+.drone .led { animation: pulse .8s steps(2) infinite; }
+
+.process-item { position: relative; padding-top: 32px; }
+
+.process-item .dot {
+  position: absolute;
+  top: -6px;
+  left: 0;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #0d0d0d;
+  border: 2px solid #3a3a3a;
+  transition: .5s var(--ease);
+}
+
+.process-item.active .dot { border-color: var(--blue); background: var(--blue); box-shadow: 0 0 0 6px rgba(101,217,255,.15), 0 0 20px var(--blue); }
+
+.process-item span { font-family: var(--mono); color: var(--blue); font-size: 12px; }
+.process-item h3 { margin: 9px 0; transition: color .4s; }
+.process-item p { font-size: 14px; color: #aaa; }
+
+/* =========================================================
+   PEDIDO
+   ========================================================= */
+.request-section { background: radial-gradient(ellipse at center, rgba(101,217,255,.08), transparent 55%), #070707; }
+
+.request-layout { display: grid; grid-template-columns: .8fr 1.2fr; gap: 40px; align-items: start; }
+
+.request-card {
+  position: relative;
+  background: #101010;
+  border: 1px solid #2a2a2a;
+  border-radius: 18px;
+  padding: 28px;
+  transition: border-color .4s, box-shadow .5s;
+}
+
+.request-card:focus-within { border-color: rgba(101,217,255,.4); box-shadow: 0 30px 80px -30px rgba(101,217,255,.25); }
+
+.request-card.flash { animation: flash 1.4s var(--ease); }
+
+@keyframes flash {
+  0% { box-shadow: 0 0 0 0 rgba(101,217,255,.6); border-color: var(--blue); }
+  100% { box-shadow: 0 0 0 26px rgba(101,217,255,0); }
+}
+
+.request-card label { display: block; font-size: 13px; margin: 14px 0 6px; color: #ddd; }
+
+.request-card input,
+.request-card select,
+.request-card textarea {
+  width: 100%;
+  background: #080808;
+  border: 1px solid #333;
+  color: white;
+  border-radius: 9px;
+  padding: 12px 13px;
+  transition: border-color .3s, box-shadow .3s, background .3s;
+}
+
+.request-card input:focus,
+.request-card select:focus,
+.request-card textarea:focus { outline: none; border-color: var(--blue); background: #0a0d0f; box-shadow: 0 0 0 4px rgba(101,217,255,.12); }
+
+.request-card textarea { min-height: 100px; resize: vertical; }
+.request-card .btn { width: 100%; margin-top: 20px; }
+.request-card .btn.sent { background: #3ddc97; }
+
+.hint { font-size: 12px; color: #888; margin-top: 10px; }
+
+/* =========================================================
+   SOBRE
+   ========================================================= */
+.about { background: #0b0b0b; }
+
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+.about p { color: #aaa; margin-bottom: 14px; }
+
+.about-card { position: relative; background: #111; border: 1px solid #262626; border-radius: 18px; padding: 34px; isolation: isolate; }
+
+.about-card::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: 19px;
+  padding: 1.5px;
+  background: conic-gradient(from var(--ang), transparent 0 55%, var(--blue) 72%, var(--gold) 86%, transparent 100%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: ang 5s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes ang { to { --ang: 360deg; } }
+
+.about-card h3 { font: 700 30px/1.2 "Playfair Display", serif; margin-bottom: 14px; }
+
+/* =========================================================
+   CONTACTO
+   ========================================================= */
+.contact { background: #090909; text-align: center; padding: 140px 0; }
+.contact .eyebrow { justify-content: center; }
+.contact p { color: #aaa; margin: 12px 0 24px; }
+.contact-buttons { justify-content: center; }
+.contact-links a { transition: color .3s; }
+.contact-links a:hover { color: var(--blue); }
+
+.radar { position: absolute; left: 50%; top: 50%; width: 0; height: 0; z-index: 0; pointer-events: none; }
+
+.radar span {
+  position: absolute;
+  left: -300px;
+  top: -300px;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  border: 1px solid rgba(101,217,255,.25);
+  animation: radar 6s ease-out infinite;
+  opacity: 0;
+}
+
+
+
+.radar span:nth-child(2) { animation-delay: 2s; }
+.radar span:nth-child(3) { animation-delay: 4s; border-color: rgba(201,166,107,.25); }
+
+@keyframes radar {
+  0% { transform: scale(.1); opacity: .9; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+
+/* =========================================================
+   RODAPÉ
+   ========================================================= */
+footer { border-top: 1px solid #1f1f1f; padding: 30px 0; color: #777; font-size: 12px; }
+
+.footer-content { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+.footer-brand { font-size: 15px; font-weight: 800; color: white; }
+.footer-social { display: flex; flex-direction: column; gap: 10px; }
+.footer-social strong { color: #ddd; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; }
+.footer-contact { display: flex; flex-direction: column; gap: 5px; align-items: flex-end; }
+.footer-phone { color: #aaa; font-size: 13px; }
+.footer-phone:hover { color: var(--blue); }
+
+/* Voltar ao topo */
+.to-top {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 40;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: rgba(10,10,10,.85);
+  backdrop-filter: blur(10px);
+  border: 1px solid #2a2a2a;
+  opacity: 0;
+  transform: translateY(20px) scale(.8);
+  pointer-events: none;
+  transition: .5s var(--ease);
+}
+
+.to-top.show { opacity: 1; transform: none; pointer-events: auto; }
+.to-top:hover { border-color: var(--blue); }
+.to-top svg { position: absolute; inset: -1px; width: 52px; height: 52px; transform: rotate(-90deg); }
+.to-top circle { fill: none; stroke: var(--blue); stroke-width: 2; stroke-dasharray: 150.8; stroke-dashoffset: 150.8; }
+.to-top b { font-size: 16px; transition: transform .4s var(--ease); }
+.to-top:hover b { transform: translateY(-3px); }
+
+/* =========================================================
+   ANIMAÇÕES DE ENTRADA
+   ========================================================= */
+.reveal {
+  transition:
+    opacity 1s var(--ease) var(--d, 0s),
+    translate 1.2s var(--ease) var(--d, 0s),
+    filter 1s var(--ease) var(--d, 0s),
+    transform .35s var(--ease),
+    scale .5s var(--ease),
+    border-color .3s,
+    box-shadow .4s;
+}
+
+.js .reveal:not(.in) { opacity: 0; translate: 0 50px; filter: blur(10px); }
+
+/* Texto palavra a palavra */
+.w { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: .12em; margin-bottom: -.12em; }
+.wi { display: inline-block; transition: transform 1.3s var(--ease) calc(var(--i) * .06s + var(--d, 0s)); }
+.js [data-split]:not(.in) .wi { transform: translateY(115%) rotate(7deg); }
+.hero h1 { --d: .25s; }
+
+/* =========================================================
+   RESPONSIVO
+   ========================================================= */
+@media (max-width: 1000px) {
+  .crosshair, .hud-hide-sm { display: none; }
+}
+
+@media (max-width: 850px) {
+  .nav-content { align-items: flex-start; flex-direction: column; padding: 12px 0; gap: 8px; min-height: 0; }
+  .nav-links { width: 100%; padding-bottom: 4px; }
+  .hero { padding-top: 140px; }
+  .hud { top: 112px; }
+  .services-grid, .partners-grid { grid-template-columns: repeat(2, 1fr); }
+  .process-grid { grid-template-columns: repeat(2, 1fr); row-gap: 40px; }
+  .process-line, .drone { display: none; }
+  .process-item { border-top: 1px solid #333; padding-top: 24px; }
+  .process-item .dot { top: -7px; }
+  .request-layout { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+  section { padding: 76px 0; }
+  .brand-section { padding: 100px 0; }
+  .hero { min-height: 100svh; }
+  .hero-bg { background-position: 58% center; }
+  .hero p { font-size: 15px; }
+  .hud { left: 12px; right: 12px; bottom: 12px; font-size: 9px; }
+  .hud-row { left: 30px; right: 30px; }
+  .scroll-cue { display: none; }
+  .choice-grid, .services-grid, .partners-grid, .process-grid, .about-grid { grid-template-columns: 1fr; }
+  .choice { padding: 23px; }
+  .footer-content { align-items: flex-start; flex-direction: column; }
+  .footer-contact { align-items: flex-start; }
+  .radar span { left: -180px; top: -180px; width: 360px; height: 360px; }
+  .to-top { right: 14px; bottom: 14px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; transition-delay: 0s !important; }
+  .js .reveal:not(.in) { opacity: 1; translate: none; filter: none; }
+  .js [data-split]:not(.in) .wi { transform: none; }
+}
+
+/* =========================================================
+   TABELAS DE PREÇOS — SKYVIEW / AEROVIEW
+   ========================================================= */
+.pricing-section { padding: 100px 0; background: #080808; border-top: 1px solid #202020; }
+.pricing-section.sky-pricing { --price-accent: var(--blue); background: radial-gradient(ellipse at 100% 0, rgba(101,217,255,.08), transparent 42%), #080a0c; }
+.pricing-section.aero-pricing { --price-accent: var(--gold); background: radial-gradient(ellipse at 0 0, rgba(201,166,107,.09), transparent 42%), #0b0a08; }
+.pricing-section[hidden] { display: none !important; }
+.price-group { margin: 34px 0; }
+.price-group h3 { font-size: 22px; margin-bottom: 16px; color: var(--price-accent); }
+.price-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.price-card { border: 1px solid #2b2b2b; background: rgba(16,16,16,.82); border-radius: 13px; padding: 20px; }
+.price-card h4 { font-size: 16px; line-height: 1.45; margin-bottom: 8px; }
+.price-card p { color: #aaa; font-size: 13px; margin-bottom: 12px; }
+.price-value { color: var(--price-accent); font-size: 21px; font-weight: 800; letter-spacing: -.4px; }
+.price-notes { color: #aaa; font-size: 13px; margin: 16px 0; }
+.price-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
+.price-table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+.price-table th, .price-table td { text-align: left; padding: 13px 12px; border-bottom: 1px solid #292929; vertical-align: top; }
+.price-table th { color: var(--price-accent); font-size: 12px; text-transform: uppercase; letter-spacing: 1px; }
+.price-table td { font-size: 14px; color: #ddd; }
+.price-table td:last-child { white-space: nowrap; font-weight: 800; color: var(--price-accent); }
+.price-table-wrap { overflow-x: auto; border: 1px solid #292929; border-radius: 12px; }
+.price-back { margin-bottom: 24px; }
+.pricing-section .section-title { color: var(--price-accent); }
+@media (max-width: 650px) {
+  .price-grid { grid-template-columns: 1fr; }
+  .price-table { min-width: 560px; }
+  .pricing-section { padding: 75px 0; }
+}
+
+</style>
+
+<style>
+.pricing-page-top{max-width:1180px;margin:0 auto;padding:28px 22px 0;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.pricing-page-brand{font-weight:800;letter-spacing:.08em;text-decoration:none;color:#c9a66b}
+.pricing-page-home{text-decoration:none;color:inherit;border:1px solid rgba(255,255,255,.24);padding:10px 15px;border-radius:999px;font-size:.9rem}
+.pricing-section{padding-top:28px;min-height:75vh}
+</style>
+</head>
 </html>
